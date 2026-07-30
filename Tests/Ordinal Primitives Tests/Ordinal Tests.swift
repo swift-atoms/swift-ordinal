@@ -177,6 +177,31 @@ extension Ordinal.Test.`Edge Case` {
     }
 
     @Test
+    func `retreat clamped returns the bound when the bound exceeds the base`() {
+        let base: Ordinal = 3
+        let bound: Ordinal = 8
+        #expect(base.retreat.clamped(by: 1, to: bound) == bound)
+        #expect(base.retreat.clamped(by: 0, to: bound) == bound)
+    }
+
+    @Test
+    func `retreat clamped clamps when the count overshoots the bound`() {
+        let base: Ordinal = 8
+        let bound: Ordinal = 3
+        #expect(base.retreat.clamped(by: 10, to: bound) == bound)
+        #expect(base.retreat.clamped(by: 5, to: bound) == bound)
+    }
+
+    @Test
+    func `retreat clamped retreats exactly when in range`() {
+        let base: Ordinal = 8
+        let bound: Ordinal = 3
+        #expect(base.retreat.clamped(by: 2, to: bound) == 6)
+        #expect(base.retreat.clamped(by: 0, to: bound) == base)
+        #expect(base.retreat.clamped(by: 4, to: bound) == 4)
+    }
+
+    @Test
     func `advance saturating overflow`() {
         let position = Ordinal(UInt.max - 5)
         let count: Cardinal = 10

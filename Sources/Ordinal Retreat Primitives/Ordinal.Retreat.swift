@@ -54,6 +54,11 @@ extension Property where Tag == Ordinal.Retreat, Base == Ordinal {
     /// - Returns: The new position, clamped to `bound` if it would go below it.
     @inlinable
     public func clamped(by count: Cardinal, to bound: Base) -> Base {
+        // A bound at or above the base clamps immediately; comparing first
+        // keeps the subtraction below from underflowing.
+        guard bound < base else {
+            return bound
+        }
         // Check if retreat would go below bound
         if count.rawValue > base.rawValue - bound.rawValue {
             return bound
