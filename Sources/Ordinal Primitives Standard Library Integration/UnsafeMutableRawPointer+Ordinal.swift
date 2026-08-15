@@ -39,7 +39,11 @@ extension UnsafeMutableRawPointer {
     ///   - offset: The ordinal byte offset to store at.
     ///   - type: The type of value being stored.
     @inlinable
-    public func storeBytes<T>(of value: T, toByteOffset offset: some Ordinal.`Protocol`, as type: T.Type) {
+    public func storeBytes<T>(
+        of value: T,
+        toByteOffset offset: some Ordinal.`Protocol`,
+        as type: T.Type
+    ) {
         unsafe self.storeBytes(of: value, toByteOffset: Int(bitPattern: offset.ordinal), as: type)
     }
 }

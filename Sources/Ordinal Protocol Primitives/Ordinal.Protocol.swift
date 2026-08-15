@@ -104,7 +104,8 @@ extension Ordinal: Ordinal.`Protocol` {
 
 // MARK: - Tagged Conformance
 
-extension Tagged: Ordinal.`Protocol` where Underlying: Ordinal.`Protocol`, Tag: ~Copyable & ~Escapable {
+extension Tagged: Ordinal.`Protocol`
+where Underlying: Ordinal.`Protocol`, Tag: ~Copyable & ~Escapable {
     /// The phantom type is the domain.
     public typealias Domain = Tag
 
