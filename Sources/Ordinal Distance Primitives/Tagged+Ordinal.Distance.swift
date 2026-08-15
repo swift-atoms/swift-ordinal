@@ -48,7 +48,9 @@ extension Property {
     /// - Returns: The cardinal distance from `self` to `other`.
     /// - Throws: `Ordinal.Error.notForward` if `other < self`.
     @inlinable
-    public func forward<T: ~Copyable & ~Escapable>(to other: Tagged<T, Ordinal>) throws(Ordinal.Error) -> Tagged<T, Ordinal>.Count
+    public func forward<T: ~Copyable & ~Escapable>(
+        to other: Tagged<T, Ordinal>
+    ) throws(Ordinal.Error) -> Tagged<T, Ordinal>.Count
     where
         Tag == Tagged<T, Ordinal>.Distance,
         Base == Tagged<T, Ordinal>

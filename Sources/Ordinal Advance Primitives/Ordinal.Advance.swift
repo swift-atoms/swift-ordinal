@@ -35,7 +35,9 @@ extension Property where Tag == Ordinal.Advance, Base: Ordinal.`Protocol` {
     /// - Returns: The new position, clamped to `UInt.max` on overflow.
     @inlinable
     public func saturating(by count: some Carrier.`Protocol`<Cardinal>) -> Base {
-        let (result, overflow) = base.ordinal.rawValue.addingReportingOverflow(count.cardinal.rawValue)
+        let (result, overflow) = base.ordinal.rawValue.addingReportingOverflow(
+            count.cardinal.rawValue
+        )
         if overflow {
             return Base(Ordinal(UInt.max))
         }
@@ -49,7 +51,9 @@ extension Property where Tag == Ordinal.Advance, Base: Ordinal.`Protocol` {
     /// - Throws: `Ordinal.Error.overflow` if the result exceeds `UInt.max`.
     @inlinable
     public func exact(by count: some Carrier.`Protocol`<Cardinal>) throws(Ordinal.Error) -> Base {
-        let (result, overflow) = base.ordinal.rawValue.addingReportingOverflow(count.cardinal.rawValue)
+        let (result, overflow) = base.ordinal.rawValue.addingReportingOverflow(
+            count.cardinal.rawValue
+        )
         if overflow {
             throw .overflow
         }
@@ -67,7 +71,9 @@ extension Property where Tag == Ordinal.Advance, Base: Ordinal.`Protocol` {
     /// - Returns: The new position, clamped to `bound` if it would exceed it.
     @inlinable
     public func clamped(by count: some Carrier.`Protocol`<Cardinal>, to bound: Base) -> Base {
-        let (result, overflow) = base.ordinal.rawValue.addingReportingOverflow(count.cardinal.rawValue)
+        let (result, overflow) = base.ordinal.rawValue.addingReportingOverflow(
+            count.cardinal.rawValue
+        )
         if overflow || result > bound.ordinal.rawValue {
             return bound
         }
