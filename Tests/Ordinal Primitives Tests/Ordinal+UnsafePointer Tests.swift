@@ -22,7 +22,7 @@ extension Ordinal.`UnsafePointer Subscript`.Unit {
     @Test
     func `get via ordinal`() {
         let values: [Int] = [10, 20, 30]
-        unsafe values.withUnsafeBufferPointer { buf in
+        values.withUnsafeBufferPointer { buf in
             let ptr = buf.baseAddress!
             let val = unsafe ptr[Ordinal(1)]
             #expect(val == 20)
@@ -33,7 +33,7 @@ extension Ordinal.`UnsafePointer Subscript`.Unit {
     func `get via tagged ordinal`() {
         struct Slot: ~Copyable {}
         let values: [Int] = [10, 20, 30]
-        unsafe values.withUnsafeBufferPointer { buf in
+        values.withUnsafeBufferPointer { buf in
             let ptr = buf.baseAddress!
             let idx = Tagged_Primitives.Tagged<Slot, Ordinal>(Ordinal(2))
             let val = unsafe ptr[idx]

@@ -20,7 +20,6 @@
 // (RECOMMENDATION, 2026-04-26).
 
 public import Cardinal_Primitives
-public import Carrier_Primitives
 public import Ordinal_Primitive
 public import Tagged_Primitives
 

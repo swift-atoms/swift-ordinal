@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Cardinal_Primitives
 public import Cardinal_Primitives_Standard_Library_Integration
 public import Property_Primitives
 public import Tagged_Primitives

@@ -41,12 +41,8 @@ public struct Ordinal {
     public let rawValue: UInt
 }
 
-// Stdlib `Hashable` and `Comparable` conformances live alongside their
-// institute counterparts in `Ordinal Hash Primitives` /
-// `Ordinal Comparison Primitives` (gated `#if swift(<6.4)` only — on
-// Swift 6.4+ each institute `*.Protocol` is a typealias to its stdlib
-// counterpart per SE-0499, so the unconditional institute conformance IS
-// the stdlib conformance).
+// Stdlib `Hashable` and `Comparable` conformances are supplied by the
+// Institute protocol conformances in the Hash and Comparison sub-targets.
 extension Ordinal: Sendable {}
 
 extension Ordinal {

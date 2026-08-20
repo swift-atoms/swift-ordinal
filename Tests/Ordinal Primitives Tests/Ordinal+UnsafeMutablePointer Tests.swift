@@ -22,7 +22,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
     @Test
     func `get via ordinal`() {
         var values: [Int] = [10, 20, 30]
-        unsafe values.withUnsafeMutableBufferPointer { buf in
+        values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
             let val = unsafe ptr[Ordinal(1)]
             #expect(val == 20)
@@ -32,7 +32,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
     @Test
     func `set via ordinal`() {
         var values: [Int] = [10, 20, 30]
-        unsafe values.withUnsafeMutableBufferPointer { buf in
+        values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
             unsafe ptr[Ordinal(0)] = 99
             #expect(unsafe ptr[0] == 99)
@@ -43,7 +43,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
     func `get via tagged ordinal`() {
         struct Slot: ~Copyable {}
         var values: [Int] = [10, 20, 30]
-        unsafe values.withUnsafeMutableBufferPointer { buf in
+        values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
             let idx = Tagged_Primitives.Tagged<Slot, Ordinal>(Ordinal(2))
             let val = unsafe ptr[idx]
@@ -55,7 +55,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
     func `set via tagged ordinal`() {
         struct Slot: ~Copyable {}
         var values: [Int] = [10, 20, 30]
-        unsafe values.withUnsafeMutableBufferPointer { buf in
+        values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
             let idx = Tagged_Primitives.Tagged<Slot, Ordinal>(Ordinal(1))
             unsafe ptr[idx] = 77
