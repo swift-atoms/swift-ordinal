@@ -2,9 +2,6 @@ import Ordinal_Primitives
 import Ordinal_Primitives_Standard_Library_Integration
 import Testing
 
-/// Regression guard: generic extension subscripts on ContiguousArray with
-/// Ordinal.Protocol constraint must resolve across module boundaries.
-/// See experiment: member-import-visibility-stdlib-subscript
 extension Ordinal {
     @Suite
     struct `ContiguousArray Subscript` {
@@ -14,8 +11,6 @@ extension Ordinal {
         @Suite(.serialized) struct Performance {}
     }
 }
-
-// MARK: - Unit
 
 extension Ordinal.`ContiguousArray Subscript`.Unit {
 

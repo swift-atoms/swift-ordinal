@@ -13,11 +13,7 @@ extension Ordinal {
     }
 }
 
-// MARK: - Unit
-
 extension Ordinal.Test.Unit {
-
-    // MARK: Construction
 
     @Test
     func `construction from UInt`() {
@@ -36,14 +32,10 @@ extension Ordinal.Test.Unit {
         #expect(Ordinal(exactly: 42) == 42)
     }
 
-    // MARK: Constants
-
     @Test
     func `zero constant`() {
         #expect(Ordinal.zero == 0)
     }
-
-    // MARK: Successor
 
     @Test
     func `successor saturating`() {
@@ -58,8 +50,6 @@ extension Ordinal.Test.Unit {
         #expect(next == 6)
     }
 
-    // MARK: Predecessor
-
     @Test
     func `predecessor exact`() throws(Ordinal.Error) {
         let position: Ordinal = 5
@@ -73,8 +63,6 @@ extension Ordinal.Test.Unit {
         let result = try position.successor.exact().predecessor.exact()
         #expect(result == position)
     }
-
-    // MARK: Advance
 
     @Test
     func `advance saturating`() {
@@ -91,8 +79,6 @@ extension Ordinal.Test.Unit {
         #expect(result == 8)
     }
 
-    // MARK: Distance
-
     @Test
     func `distance forward`() throws(Ordinal.Error) {
         let a: Ordinal = 3
@@ -108,8 +94,6 @@ extension Ordinal.Test.Unit {
         #expect(distance == 0)
     }
 
-    // MARK: Comparison
-
     @Test
     func comparison() {
         let a: Ordinal = 3
@@ -121,8 +105,6 @@ extension Ordinal.Test.Unit {
         #expect(a == a)
         #expect(a != b)
     }
-
-    // MARK: Cardinal Conversion
 
     @Test
     func `cardinal to position`() {
@@ -138,8 +120,6 @@ extension Ordinal.Test.Unit {
         #expect(count == 42)
     }
 }
-
-// MARK: - Edge Case
 
 extension Ordinal.Test.`Edge Case` {
 
@@ -226,8 +206,6 @@ extension Ordinal.Test.`Edge Case` {
         }
     }
 }
-
-// MARK: - Integration
 
 extension Ordinal.Test.Integration {
 

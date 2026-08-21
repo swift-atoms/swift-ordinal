@@ -1,5 +1,3 @@
-// exports.swift
-
 @_exported public import Cardinal_Primitives
 @_exported public import Ordinal_Advance_Primitives
 @_exported public import Ordinal_Cardinal_Primitives

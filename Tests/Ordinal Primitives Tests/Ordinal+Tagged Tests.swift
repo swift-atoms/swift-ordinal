@@ -16,11 +16,7 @@ extension Ordinal {
     }
 }
 
-// MARK: - Unit
-
 extension Ordinal.Tagged.Unit {
-
-    // MARK: Construction
 
     @Test
     func `construction from ordinal`() {
@@ -40,19 +36,13 @@ extension Ordinal.Tagged.Unit {
         #expect(Tagged_Primitives.Tagged<SlotPosition, Ordinal>.zero.position == .zero)
     }
 
-    // MARK: Tag Discrimination
-
     @Test
     func `cross tag comparison forbidden`() {
-        // Same numeric value but distinct phantom tags — equality only holds
-        // within the same Tag domain. A cross-tag operation would not compile;
-        // this test verifies the same-tag path works.
+
         let slotA: Tagged_Primitives.Tagged<SlotPosition, Ordinal> = 7
         let slotB: Tagged_Primitives.Tagged<SlotPosition, Ordinal> = 7
         #expect(slotA == slotB)
     }
-
-    // MARK: Successor / Predecessor
 
     @Test
     func `successor saturating`() {
@@ -74,8 +64,6 @@ extension Ordinal.Tagged.Unit {
         let prev = try slot.predecessor.exact()
         #expect(prev == 4)
     }
-
-    // MARK: Advance (Tagged + Tagged.Count)
 
     @Test
     func `advance saturating tagged count`() {
@@ -101,8 +89,6 @@ extension Ordinal.Tagged.Unit {
         #expect(result == 8)
     }
 
-    // MARK: Distance
-
     @Test
     func `distance forward tagged`() throws(Ordinal.Error) {
         let a: Tagged_Primitives.Tagged<SlotPosition, Ordinal> = 3
@@ -113,17 +99,12 @@ extension Ordinal.Tagged.Unit {
 
     @Test
     func `distance unchecked forward monotonic`() {
-        // distance.unchecked is the new accessor introduced in this dispatch
-        // for proven-monotonic call sites where the forward precondition holds
-        // by invariant. Bare-Ordinal path is exercised in-package via the
-        // Range<Ordinal>.count consumer; here we exercise it directly.
+
         let a: Ordinal = 3
         let b: Ordinal = 8
         let distance = a.distance.unchecked(to: b)
         #expect(distance == Cardinal(5))
     }
-
-    // MARK: Range
 
     @Test
     func `range count tagged`() {
@@ -149,8 +130,6 @@ extension Ordinal.Tagged.Unit {
         #expect(range.upperBound == 8)
     }
 
-    // MARK: Cardinal-from-Tagged-Ordinal
-
     @Test
     func `cardinal from ordinal`() {
         let slot: Tagged_Primitives.Tagged<SlotPosition, Ordinal> = 5
@@ -158,8 +137,6 @@ extension Ordinal.Tagged.Unit {
         #expect(count == 5)
     }
 }
-
-// MARK: - Edge Case
 
 extension Ordinal.Tagged.`Edge Case` {
 
@@ -196,8 +173,6 @@ extension Ordinal.Tagged.`Edge Case` {
         }
     }
 }
-
-// MARK: - Integration
 
 extension Ordinal.Tagged.Integration {
 

@@ -1,33 +1,15 @@
-// ===----------------------------------------------------------------------===//
-//
-// This source file is part of the swift-primitives open source project
-//
-// Copyright (c) 2024-2026 Coen ten Thije Boonkkamp and the swift-primitives project authors
-// Licensed under Apache License v2.0
-//
-// See LICENSE for license information
-//
-// ===----------------------------------------------------------------------===//
-
 public import Ordinal_Error_Primitives
 public import Ordinal_Primitive
 public import Property_Primitives
 public import Tagged_Primitives
 
-// MARK: - Tagged<Tag, Ordinal>.Predecessor
-
 extension Tagged where Underlying == Ordinal, Tag: ~Copyable & ~Escapable {
-    /// Tag for predecessor operations on tagged ordinals.
+
     public enum Predecessor {}
 }
 
-// MARK: - Tagged<Tag, Ordinal> Predecessor (Property-based)
-
 extension Tagged where Underlying == Ordinal, Tag: ~Copyable & ~Escapable {
-    /// Access to policy-aware predecessor operations.
-    ///
-    /// Use this accessor to navigate backward by one position:
-    /// - `.predecessor.exact()` — throws at position zero
+
     @inlinable
     public var predecessor: Property<Predecessor, Self> {
         Property(self)
@@ -35,10 +17,7 @@ extension Tagged where Underlying == Ordinal, Tag: ~Copyable & ~Escapable {
 }
 
 extension Property {
-    /// Returns the previous position, throwing at zero.
-    ///
-    /// - Returns: The previous position.
-    /// - Throws: `Ordinal.Error.underflow` if at position zero.
+
     @inlinable
     public func exact<T: ~Copyable & ~Escapable>() throws(Ordinal.Error) -> Base
     where
