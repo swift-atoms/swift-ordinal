@@ -3,7 +3,7 @@
 # 2026-05-09: topics expanded to 4 per cohort C7 (data-structures launch cohort).
 description: "A typed ordinal position — distinct from count and offset — with saturating, exact, and clamped successor, predecessor, and distance navigation for Swift."
 topics:
-  - primitives
+  - molecules
   - ordinal
   - type-safety
   - data-structures
