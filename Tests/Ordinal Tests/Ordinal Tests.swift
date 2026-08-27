@@ -1,4 +1,4 @@
-import Ordinal_Test_Support
+import Cardinal
 import Testing
 
 @testable import Ordinal
