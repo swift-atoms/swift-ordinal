@@ -46,7 +46,8 @@ let package = Package(
         .testTarget(
             name: "Ordinal Tests",
             dependencies: [
-                "Ordinal"
+                "Ordinal",
+                "Ordinal Standard Library Integration",
             ]
         ),
     ],

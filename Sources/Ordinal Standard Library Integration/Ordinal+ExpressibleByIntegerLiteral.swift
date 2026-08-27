@@ -1,3 +1,5 @@
+public import Ordinal
+
 extension Ordinal: ExpressibleByIntegerLiteral {
 
     @_disfavoredOverload

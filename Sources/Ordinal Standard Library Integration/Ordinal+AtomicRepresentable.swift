@@ -1,4 +1,5 @@
 #if SYNCHRONIZATION_AVAILABLE
+    public import Ordinal
     public import Synchronization
 
     extension Ordinal: AtomicRepresentable {
