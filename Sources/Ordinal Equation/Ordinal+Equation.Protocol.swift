@@ -1,4 +1,4 @@
 public import Equation
-public import Ordinal_Primitive
+public import Ordinal
 
 extension Ordinal: Equation.`Protocol` {}

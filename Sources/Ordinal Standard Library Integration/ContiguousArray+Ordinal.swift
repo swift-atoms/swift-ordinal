@@ -1,4 +1,4 @@
-public import Ordinal_Primitive
+public import Ordinal
 public import Ordinal_Protocol
 
 extension ContiguousArray {

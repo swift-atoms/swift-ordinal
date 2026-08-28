@@ -1,5 +1,5 @@
 public import Ordinal_Error
-public import Ordinal_Primitive
+public import Ordinal
 public import Tagged
 
 extension Int {

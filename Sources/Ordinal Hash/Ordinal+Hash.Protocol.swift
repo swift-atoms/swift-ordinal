@@ -1,5 +1,5 @@
 public import Hash
-public import Ordinal_Primitive
+public import Ordinal
 
 extension Ordinal: Hash.`Protocol` {
 

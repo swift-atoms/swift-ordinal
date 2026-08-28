@@ -1,7 +1,7 @@
 #if SYNCHRONIZATION_AVAILABLE
     public import Cardinal
     public import Ordinal_Cardinal
-    public import Ordinal_Primitive
+    public import Ordinal
     public import Ordinal_Protocol
     public import Synchronization
 

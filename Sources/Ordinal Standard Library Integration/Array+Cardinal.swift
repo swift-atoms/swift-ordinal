@@ -1,6 +1,6 @@
 public import Cardinal
 public import Cardinal_Standard_Library_Integration
-public import Ordinal_Primitive
+public import Ordinal
 public import Tagged
 
 extension Array {

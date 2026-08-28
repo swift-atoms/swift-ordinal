@@ -1,6 +1,6 @@
 public import Cardinal
 public import Ordinal_Error
-public import Ordinal_Primitive
+public import Ordinal
 public import Ordinal_Protocol
 public import Property
 public import Tagged

@@ -1,4 +1,4 @@
 public import Comparison
-public import Ordinal_Primitive
+public import Ordinal
 
 extension Ordinal: Comparison.`Protocol` {}

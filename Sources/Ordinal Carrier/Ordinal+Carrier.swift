@@ -1,5 +1,5 @@
 public import Carrier
-public import Ordinal_Primitive
+public import Ordinal
 
 extension Ordinal: Carrier.`Protocol` {
 

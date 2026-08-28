@@ -13,11 +13,6 @@ let package = Package(
     products: [
 
         .library(
-            name: "Ordinal Primitive",
-            targets: ["Ordinal Primitive"]
-        ),
-
-        .library(
             name: "Ordinal Error",
             targets: ["Ordinal Error"]
         ),
@@ -87,51 +82,51 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-tagged.git",
+            url: "https://github.com/swift-atoms/swift-tagged.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-carrier.git",
+            url: "https://github.com/swift-atoms/swift-carrier.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-cardinal.git",
+            url: "https://github.com/swift-atoms/swift-cardinal.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-property.git",
+            url: "https://github.com/swift-atoms/swift-property.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-equation.git",
+            url: "https://github.com/swift-atoms/swift-equation.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-comparison.git",
+            url: "https://github.com/swift-atoms/swift-comparison.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-hash.git",
+            url: "https://github.com/swift-atoms/swift-hash.git",
             branch: "main"
         ),
     ],
     targets: [
 
         .target(
-            name: "Ordinal Primitive",
+            name: "Ordinal",
             dependencies: []
         ),
 
         .target(
             name: "Ordinal Error",
             dependencies: [
-                "Ordinal Primitive"
+                .target(name: "Ordinal")
             ]
         ),
         .target(
             name: "Ordinal Protocol",
             dependencies: [
-                "Ordinal Primitive",
+                .target(name: "Ordinal"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Carrier", package: "swift-carrier"),
                 .product(name: "Tagged", package: "swift-tagged"),
@@ -140,9 +135,9 @@ let package = Package(
         .target(
             name: "Ordinal Advance",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error",
-                "Ordinal Protocol",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Carrier", package: "swift-carrier"),
                 .product(name: "Property", package: "swift-property"),
@@ -152,9 +147,9 @@ let package = Package(
         .target(
             name: "Ordinal Retreat",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error",
-                "Ordinal Protocol",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Tagged", package: "swift-tagged"),
@@ -163,9 +158,9 @@ let package = Package(
         .target(
             name: "Ordinal Successor",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error",
-                "Ordinal Protocol",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
@@ -173,9 +168,9 @@ let package = Package(
         .target(
             name: "Ordinal Predecessor",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error",
-                "Ordinal Protocol",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
@@ -183,9 +178,9 @@ let package = Package(
         .target(
             name: "Ordinal Distance",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error",
-                "Ordinal Protocol",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Carrier", package: "swift-carrier"),
                 .product(name: "Property", package: "swift-property"),
@@ -195,8 +190,8 @@ let package = Package(
         .target(
             name: "Ordinal Cardinal",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Protocol",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Protocol"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Carrier", package: "swift-carrier"),
             ]
@@ -204,36 +199,36 @@ let package = Package(
         .target(
             name: "Ordinal Carrier",
             dependencies: [
-                "Ordinal Primitive",
+                .target(name: "Ordinal"),
                 .product(name: "Carrier", package: "swift-carrier"),
             ]
         ),
         .target(
             name: "Ordinal Equation",
             dependencies: [
-                "Ordinal Primitive",
+                .target(name: "Ordinal"),
                 .product(name: "Equation", package: "swift-equation"),
             ]
         ),
         .target(
             name: "Ordinal Hash",
             dependencies: [
-                "Ordinal Primitive",
+                .target(name: "Ordinal"),
                 .product(name: "Hash", package: "swift-hash"),
             ]
         ),
         .target(
             name: "Ordinal Comparison",
             dependencies: [
-                "Ordinal Primitive",
+                .target(name: "Ordinal"),
                 .product(name: "Comparison", package: "swift-comparison"),
             ]
         ),
         .target(
             name: "Ordinal Tagged",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Cardinal",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Cardinal"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
@@ -242,12 +237,12 @@ let package = Package(
         .target(
             name: "Ordinal Standard Library Integration",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error",
-                "Ordinal Protocol",
-                "Ordinal Cardinal",
-                "Ordinal Distance",
-                "Ordinal Tagged",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
+                .target(name: "Ordinal Cardinal"),
+                .target(name: "Ordinal Distance"),
+                .target(name: "Ordinal Tagged"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(
                     name: "Cardinal Standard Library Integration",
@@ -264,34 +259,11 @@ let package = Package(
         ),
 
         .target(
-            name: "Ordinal",
-            dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error",
-                "Ordinal Protocol",
-                "Ordinal Advance",
-                "Ordinal Retreat",
-                "Ordinal Successor",
-                "Ordinal Predecessor",
-                "Ordinal Distance",
-                "Ordinal Cardinal",
-                "Ordinal Carrier",
-                "Ordinal Equation",
-                "Ordinal Hash",
-                "Ordinal Comparison",
-                "Ordinal Tagged",
-                "Ordinal Standard Library Integration",
-                .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Tagged", package: "swift-tagged"),
-            ]
-        ),
-
-        .target(
             name: "Ordinal Test Support",
             dependencies: [
-                "Ordinal",
+                .target(name: "Ordinal"),
                 .product(
-                    name: "Cardinal Test Support",
+                    name: "Cardinal Standard Library Integration",
                     package: "swift-cardinal"
                 ),
             ],
@@ -301,9 +273,9 @@ let package = Package(
         .testTarget(
             name: "Ordinal Tests",
             dependencies: [
-                "Ordinal",
-                "Ordinal Standard Library Integration",
-                "Ordinal Test Support",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Standard Library Integration"),
+                .target(name: "Ordinal Test Support"),
             ]
         ),
     ],
