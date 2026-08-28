@@ -256,10 +256,6 @@ let package = Package(
                 .product(name: "Carrier Protocol", package: "swift-carrier"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Tagged", package: "swift-tagged"),
-                .product(
-                    name: "Tagged Standard Library Integration",
-                    package: "swift-tagged"
-                ),
             ]
         ),
 
@@ -293,6 +289,17 @@ let package = Package(
                 .target(name: "Ordinal"),
                 .target(name: "Ordinal Standard Library Integration"),
                 .target(name: "Ordinal Test Support"),
+                .product(name: "Tagged", package: "swift-tagged"),
+                .product(
+                    name: "Tagged Standard Library Integration",
+                    package: "swift-tagged"
+                ),
+            ]
+        ),
+        .testTarget(
+            name: "Ordinal Canonical Tests",
+            dependencies: [
+                .target(name: "Ordinal"),
             ]
         ),
     ],

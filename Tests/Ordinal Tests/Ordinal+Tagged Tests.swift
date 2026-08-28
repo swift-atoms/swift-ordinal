@@ -1,4 +1,6 @@
 import Ordinal_Test_Support
+import Tagged
+import Tagged_Standard_Library_Integration
 import Testing
 
 @testable import Ordinal

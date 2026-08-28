@@ -1,5 +1,6 @@
 import Ordinal
 import Ordinal_Standard_Library_Integration
+import Tagged
 import Testing
 
 extension Ordinal {
