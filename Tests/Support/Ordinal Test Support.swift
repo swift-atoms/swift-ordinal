@@ -1,2 +1,14 @@
-@_exported public import Cardinal_Test_Support
-internal import Ordinal
+@_exported public import Cardinal
+@_exported public import Cardinal_Equation
+@_exported public import Cardinal_Standard_Library_Integration
+@_exported public import Ordinal
+@_exported public import Ordinal_Advance
+@_exported public import Ordinal_Cardinal
+@_exported public import Ordinal_Comparison
+@_exported public import Ordinal_Distance
+@_exported public import Ordinal_Equation
+@_exported public import Ordinal_Predecessor
+@_exported public import Ordinal_Retreat
+@_exported public import Ordinal_Standard_Library_Integration
+@_exported public import Ordinal_Successor
+@_exported public import Ordinal_Tagged

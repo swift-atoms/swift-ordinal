@@ -10,12 +10,12 @@ extension UnsafeMutablePointer where Pointee: ~Copyable {
 extension UnsafeMutablePointer where Pointee: ~Copyable {
 
     @inlinable
-    public var move: Property.Property<Move, Self> {
-        unsafe Property.Property(self)
+    public var move: Property::Property<Move, Self> {
+        unsafe Property::Property(self)
     }
 }
 
-extension Property.Property {
+extension Property::Property {
 
     @inlinable
     public func initialize<Pointee: ~Copyable>(

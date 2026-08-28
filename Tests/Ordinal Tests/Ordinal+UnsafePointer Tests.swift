@@ -30,7 +30,7 @@ extension Ordinal.`UnsafePointer Subscript`.Unit {
         let values: [Int] = [10, 20, 30]
         values.withUnsafeBufferPointer { buf in
             let ptr = buf.baseAddress!
-            let idx = Tagged.Tagged<Slot, Ordinal>(Ordinal(2))
+            let idx = Tagged::Tagged<Slot, Ordinal>(Ordinal(2))
             let val = unsafe ptr[idx]
             #expect(val == 30)
         }

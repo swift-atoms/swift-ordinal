@@ -40,7 +40,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
         var values: [Int] = [10, 20, 30]
         values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
-            let idx = Tagged.Tagged<Slot, Ordinal>(Ordinal(2))
+            let idx = Tagged::Tagged<Slot, Ordinal>(Ordinal(2))
             let val = unsafe ptr[idx]
             #expect(val == 30)
         }
@@ -52,7 +52,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
         var values: [Int] = [10, 20, 30]
         values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
-            let idx = Tagged.Tagged<Slot, Ordinal>(Ordinal(1))
+            let idx = Tagged::Tagged<Slot, Ordinal>(Ordinal(1))
             unsafe ptr[idx] = 77
             #expect(unsafe ptr[1] == 77)
         }

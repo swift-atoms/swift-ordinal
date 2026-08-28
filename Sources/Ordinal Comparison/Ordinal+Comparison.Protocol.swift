@@ -1,4 +1,4 @@
-public import Comparison
+public import Comparison_Protocol
 public import Ordinal
 
-extension Ordinal: Comparison.`Protocol` {}
+extension Ordinal::Ordinal: Comparison::Comparison.`Protocol` {}

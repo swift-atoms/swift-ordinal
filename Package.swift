@@ -128,7 +128,8 @@ let package = Package(
             dependencies: [
                 .target(name: "Ordinal"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Cardinal Carrier", package: "swift-cardinal"),
+                .product(name: "Carrier Protocol", package: "swift-carrier"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
@@ -139,7 +140,8 @@ let package = Package(
                 .target(name: "Ordinal Error"),
                 .target(name: "Ordinal Protocol"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Cardinal Carrier", package: "swift-cardinal"),
+                .product(name: "Carrier Protocol", package: "swift-carrier"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
@@ -182,7 +184,8 @@ let package = Package(
                 .target(name: "Ordinal Error"),
                 .target(name: "Ordinal Protocol"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Cardinal Carrier", package: "swift-cardinal"),
+                .product(name: "Carrier Protocol", package: "swift-carrier"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
@@ -193,35 +196,36 @@ let package = Package(
                 .target(name: "Ordinal"),
                 .target(name: "Ordinal Protocol"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Cardinal Carrier", package: "swift-cardinal"),
+                .product(name: "Carrier Protocol", package: "swift-carrier"),
             ]
         ),
         .target(
             name: "Ordinal Carrier",
             dependencies: [
                 .target(name: "Ordinal"),
-                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Carrier Protocol", package: "swift-carrier"),
             ]
         ),
         .target(
             name: "Ordinal Equation",
             dependencies: [
                 .target(name: "Ordinal"),
-                .product(name: "Equation", package: "swift-equation"),
+                .product(name: "Equation Protocol", package: "swift-equation"),
             ]
         ),
         .target(
             name: "Ordinal Hash",
             dependencies: [
                 .target(name: "Ordinal"),
-                .product(name: "Hash", package: "swift-hash"),
+                .product(name: "Hash Protocol", package: "swift-hash"),
             ]
         ),
         .target(
             name: "Ordinal Comparison",
             dependencies: [
                 .target(name: "Ordinal"),
-                .product(name: "Comparison", package: "swift-comparison"),
+                .product(name: "Comparison Protocol", package: "swift-comparison"),
             ]
         ),
         .target(
@@ -248,7 +252,8 @@ let package = Package(
                     name: "Cardinal Standard Library Integration",
                     package: "swift-cardinal"
                 ),
-                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Cardinal Carrier", package: "swift-cardinal"),
+                .product(name: "Carrier Protocol", package: "swift-carrier"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Tagged", package: "swift-tagged"),
                 .product(
@@ -262,6 +267,18 @@ let package = Package(
             name: "Ordinal Test Support",
             dependencies: [
                 .target(name: "Ordinal"),
+                .target(name: "Ordinal Advance"),
+                .target(name: "Ordinal Retreat"),
+                .target(name: "Ordinal Successor"),
+                .target(name: "Ordinal Predecessor"),
+                .target(name: "Ordinal Distance"),
+                .target(name: "Ordinal Cardinal"),
+                .target(name: "Ordinal Equation"),
+                .target(name: "Ordinal Comparison"),
+                .target(name: "Ordinal Tagged"),
+                .target(name: "Ordinal Standard Library Integration"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Cardinal Equation", package: "swift-cardinal"),
                 .product(
                     name: "Cardinal Standard Library Integration",
                     package: "swift-cardinal"

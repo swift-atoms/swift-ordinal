@@ -1,8 +1,8 @@
-public import Carrier
+public import Carrier_Protocol
 public import Ordinal
 
-extension Ordinal: Carrier.`Protocol` {
+extension Ordinal::Ordinal: Carrier::Carrier.`Protocol` {
 
-    public typealias Underlying = Ordinal
+    public typealias Underlying = Ordinal::Ordinal
 
 }

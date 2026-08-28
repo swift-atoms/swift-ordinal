@@ -1,4 +1,5 @@
 public import Cardinal
+internal import Cardinal_Carrier
 public import Ordinal_Error
 public import Ordinal
 public import Ordinal_Protocol

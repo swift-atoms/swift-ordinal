@@ -32,7 +32,7 @@ extension Ordinal.`ContiguousArray Subscript`.Unit {
     func `get via tagged ordinal`() {
         struct Slot: ~Copyable {}
         let arr = ContiguousArray([10, 20, 30])
-        let idx = Tagged.Tagged<Slot, Ordinal>(Ordinal(2))
+        let idx = Tagged::Tagged<Slot, Ordinal>(Ordinal(2))
         let val = arr[idx]
         #expect(val == 30)
     }
@@ -41,7 +41,7 @@ extension Ordinal.`ContiguousArray Subscript`.Unit {
     func `set via tagged ordinal`() {
         struct Slot: ~Copyable {}
         var arr = ContiguousArray([10, 20, 30])
-        let idx = Tagged.Tagged<Slot, Ordinal>(Ordinal(1))
+        let idx = Tagged::Tagged<Slot, Ordinal>(Ordinal(1))
         arr[idx] = 77
         #expect(arr[1] == 77)
     }
