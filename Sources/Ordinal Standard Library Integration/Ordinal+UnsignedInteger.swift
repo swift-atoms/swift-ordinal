@@ -1,5 +1,3 @@
-public import Ordinal
-
 extension Ordinal {
 
     @inlinable

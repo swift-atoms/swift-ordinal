@@ -1,4 +1,4 @@
-public import Ordinal
+public import Ordinal_Primitive
 
 extension Ordinal: CustomStringConvertible {
 
