@@ -1,2 +1,0 @@
-@_exported public import Cardinal_Primitives_Test_Support
-internal import Ordinal_Primitives

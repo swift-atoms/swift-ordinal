@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-ordinal-primitives",
+    name: "swift-ordinal",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,297 +13,269 @@ let package = Package(
     products: [
 
         .library(
-            name: "Ordinal Primitive",
-            targets: ["Ordinal Primitive"]
+            name: "Ordinal Error",
+            targets: ["Ordinal Error"]
+        ),
+        .library(
+            name: "Ordinal Protocol",
+            targets: ["Ordinal Protocol"]
+        ),
+        .library(
+            name: "Ordinal Advance",
+            targets: ["Ordinal Advance"]
+        ),
+        .library(
+            name: "Ordinal Retreat",
+            targets: ["Ordinal Retreat"]
+        ),
+        .library(
+            name: "Ordinal Successor",
+            targets: ["Ordinal Successor"]
+        ),
+        .library(
+            name: "Ordinal Predecessor",
+            targets: ["Ordinal Predecessor"]
+        ),
+        .library(
+            name: "Ordinal Distance",
+            targets: ["Ordinal Distance"]
+        ),
+        .library(
+            name: "Ordinal Cardinal",
+            targets: ["Ordinal Cardinal"]
+        ),
+        .library(
+            name: "Ordinal Carrier",
+            targets: ["Ordinal Carrier"]
+        ),
+        .library(
+            name: "Ordinal Equation",
+            targets: ["Ordinal Equation"]
+        ),
+        .library(
+            name: "Ordinal Hash",
+            targets: ["Ordinal Hash"]
+        ),
+        .library(
+            name: "Ordinal Comparison",
+            targets: ["Ordinal Comparison"]
+        ),
+        .library(
+            name: "Ordinal Tagged",
+            targets: ["Ordinal Tagged"]
         ),
 
         .library(
-            name: "Ordinal Error Primitives",
-            targets: ["Ordinal Error Primitives"]
-        ),
-        .library(
-            name: "Ordinal Protocol Primitives",
-            targets: ["Ordinal Protocol Primitives"]
-        ),
-        .library(
-            name: "Ordinal Advance Primitives",
-            targets: ["Ordinal Advance Primitives"]
-        ),
-        .library(
-            name: "Ordinal Retreat Primitives",
-            targets: ["Ordinal Retreat Primitives"]
-        ),
-        .library(
-            name: "Ordinal Successor Primitives",
-            targets: ["Ordinal Successor Primitives"]
-        ),
-        .library(
-            name: "Ordinal Predecessor Primitives",
-            targets: ["Ordinal Predecessor Primitives"]
-        ),
-        .library(
-            name: "Ordinal Distance Primitives",
-            targets: ["Ordinal Distance Primitives"]
-        ),
-        .library(
-            name: "Ordinal Cardinal Primitives",
-            targets: ["Ordinal Cardinal Primitives"]
-        ),
-        .library(
-            name: "Ordinal Carrier Primitives",
-            targets: ["Ordinal Carrier Primitives"]
-        ),
-        .library(
-            name: "Ordinal Equation Primitives",
-            targets: ["Ordinal Equation Primitives"]
-        ),
-        .library(
-            name: "Ordinal Hash Primitives",
-            targets: ["Ordinal Hash Primitives"]
-        ),
-        .library(
-            name: "Ordinal Comparison Primitives",
-            targets: ["Ordinal Comparison Primitives"]
-        ),
-        .library(
-            name: "Ordinal Tagged Primitives",
-            targets: ["Ordinal Tagged Primitives"]
+            name: "Ordinal Standard Library Integration",
+            targets: ["Ordinal Standard Library Integration"]
         ),
 
         .library(
-            name: "Ordinal Primitives Standard Library Integration",
-            targets: ["Ordinal Primitives Standard Library Integration"]
+            name: "Ordinal",
+            targets: ["Ordinal"]
         ),
 
         .library(
-            name: "Ordinal Primitives",
-            targets: ["Ordinal Primitives"]
-        ),
-
-        .library(
-            name: "Ordinal Primitives Test Support",
-            targets: ["Ordinal Primitives Test Support"]
+            name: "Ordinal Test Support",
+            targets: ["Ordinal Test Support"]
         ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-tagged-primitives.git",
+            url: "https://github.com/swift-atoms/swift-tagged.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-carrier-primitives.git",
+            url: "https://github.com/swift-atoms/swift-carrier.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-cardinal-primitives.git",
+            url: "https://github.com/swift-atoms/swift-cardinal.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-property-primitives.git",
+            url: "https://github.com/swift-atoms/swift-property.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-equation-primitives.git",
+            url: "https://github.com/swift-atoms/swift-equation.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-comparison-primitives.git",
+            url: "https://github.com/swift-atoms/swift-comparison.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-hash-primitives.git",
+            url: "https://github.com/swift-atoms/swift-hash.git",
             branch: "main"
         ),
     ],
     targets: [
 
         .target(
-            name: "Ordinal Primitive",
+            name: "Ordinal",
             dependencies: []
         ),
 
         .target(
-            name: "Ordinal Error Primitives",
+            name: "Ordinal Error",
             dependencies: [
-                "Ordinal Primitive"
+                .target(name: "Ordinal")
             ]
         ),
         .target(
-            name: "Ordinal Protocol Primitives",
+            name: "Ordinal Protocol",
             dependencies: [
-                "Ordinal Primitive",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Carrier Primitives", package: "swift-carrier-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .target(name: "Ordinal"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .target(
-            name: "Ordinal Advance Primitives",
+            name: "Ordinal Advance",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error Primitives",
-                "Ordinal Protocol Primitives",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Carrier Primitives", package: "swift-carrier-primitives"),
-                .product(name: "Property Primitives", package: "swift-property-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Property", package: "swift-property"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .target(
-            name: "Ordinal Retreat Primitives",
+            name: "Ordinal Retreat",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error Primitives",
-                "Ordinal Protocol Primitives",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Property Primitives", package: "swift-property-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Property", package: "swift-property"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .target(
-            name: "Ordinal Successor Primitives",
+            name: "Ordinal Successor",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error Primitives",
-                "Ordinal Protocol Primitives",
-                .product(name: "Property Primitives", package: "swift-property-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
+                .product(name: "Property", package: "swift-property"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .target(
-            name: "Ordinal Predecessor Primitives",
+            name: "Ordinal Predecessor",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error Primitives",
-                "Ordinal Protocol Primitives",
-                .product(name: "Property Primitives", package: "swift-property-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
+                .product(name: "Property", package: "swift-property"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .target(
-            name: "Ordinal Distance Primitives",
+            name: "Ordinal Distance",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error Primitives",
-                "Ordinal Protocol Primitives",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Carrier Primitives", package: "swift-carrier-primitives"),
-                .product(name: "Property Primitives", package: "swift-property-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Property", package: "swift-property"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .target(
-            name: "Ordinal Cardinal Primitives",
+            name: "Ordinal Cardinal",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Protocol Primitives",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Carrier Primitives", package: "swift-carrier-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Protocol"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Carrier", package: "swift-carrier"),
             ]
         ),
         .target(
-            name: "Ordinal Carrier Primitives",
+            name: "Ordinal Carrier",
             dependencies: [
-                "Ordinal Primitive",
-                .product(name: "Carrier Primitives", package: "swift-carrier-primitives"),
+                .target(name: "Ordinal"),
+                .product(name: "Carrier", package: "swift-carrier"),
             ]
         ),
         .target(
-            name: "Ordinal Equation Primitives",
+            name: "Ordinal Equation",
             dependencies: [
-                "Ordinal Primitive",
-                .product(name: "Equation Primitives", package: "swift-equation-primitives"),
+                .target(name: "Ordinal"),
+                .product(name: "Equation", package: "swift-equation"),
             ]
         ),
         .target(
-            name: "Ordinal Hash Primitives",
+            name: "Ordinal Hash",
             dependencies: [
-                "Ordinal Primitive",
-                .product(name: "Hash Primitives", package: "swift-hash-primitives"),
+                .target(name: "Ordinal"),
+                .product(name: "Hash", package: "swift-hash"),
             ]
         ),
         .target(
-            name: "Ordinal Comparison Primitives",
+            name: "Ordinal Comparison",
             dependencies: [
-                "Ordinal Primitive",
-                .product(name: "Comparison Primitives", package: "swift-comparison-primitives"),
+                .target(name: "Ordinal"),
+                .product(name: "Comparison", package: "swift-comparison"),
             ]
         ),
         .target(
-            name: "Ordinal Tagged Primitives",
+            name: "Ordinal Tagged",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Cardinal Primitives",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Cardinal"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
 
         .target(
-            name: "Ordinal Primitives Standard Library Integration",
+            name: "Ordinal Standard Library Integration",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error Primitives",
-                "Ordinal Protocol Primitives",
-                "Ordinal Cardinal Primitives",
-                "Ordinal Distance Primitives",
-                "Ordinal Tagged Primitives",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Error"),
+                .target(name: "Ordinal Protocol"),
+                .target(name: "Ordinal Cardinal"),
+                .target(name: "Ordinal Distance"),
+                .target(name: "Ordinal Tagged"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(
-                    name: "Cardinal Primitives Standard Library Integration",
-                    package: "swift-cardinal-primitives"
+                    name: "Cardinal Standard Library Integration",
+                    package: "swift-cardinal"
                 ),
-                .product(name: "Carrier Primitives", package: "swift-carrier-primitives"),
-                .product(name: "Property Primitives", package: "swift-property-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
+                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Property", package: "swift-property"),
+                .product(name: "Tagged", package: "swift-tagged"),
                 .product(
-                    name: "Tagged Primitives Standard Library Integration",
-                    package: "swift-tagged-primitives"
+                    name: "Tagged Standard Library Integration",
+                    package: "swift-tagged"
                 ),
             ]
         ),
 
         .target(
-            name: "Ordinal Primitives",
+            name: "Ordinal Test Support",
             dependencies: [
-                "Ordinal Primitive",
-                "Ordinal Error Primitives",
-                "Ordinal Protocol Primitives",
-                "Ordinal Advance Primitives",
-                "Ordinal Retreat Primitives",
-                "Ordinal Successor Primitives",
-                "Ordinal Predecessor Primitives",
-                "Ordinal Distance Primitives",
-                "Ordinal Cardinal Primitives",
-                "Ordinal Carrier Primitives",
-                "Ordinal Equation Primitives",
-                "Ordinal Hash Primitives",
-                "Ordinal Comparison Primitives",
-                "Ordinal Tagged Primitives",
-                "Ordinal Primitives Standard Library Integration",
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
-            ]
-        ),
-
-        .target(
-            name: "Ordinal Primitives Test Support",
-            dependencies: [
-                "Ordinal Primitives",
+                .target(name: "Ordinal"),
                 .product(
-                    name: "Cardinal Primitives Test Support",
-                    package: "swift-cardinal-primitives"
+                    name: "Cardinal Standard Library Integration",
+                    package: "swift-cardinal"
                 ),
             ],
             path: "Tests/Support"
         ),
 
         .testTarget(
-            name: "Ordinal Primitives Tests",
+            name: "Ordinal Tests",
             dependencies: [
-                "Ordinal Primitives",
-                "Ordinal Primitives Standard Library Integration",
-                "Ordinal Primitives Test Support",
+                .target(name: "Ordinal"),
+                .target(name: "Ordinal Standard Library Integration"),
+                .target(name: "Ordinal Test Support"),
             ]
         ),
     ],
