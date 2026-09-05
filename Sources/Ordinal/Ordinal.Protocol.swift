@@ -1,7 +1,7 @@
+public import Advancement
 public import Cardinal
-public import Cardinal_Carrier
 public import Carrier_Protocol
-public import Ordinal
+public import Difference
 public import Tagged
 
 extension Ordinal {
@@ -11,6 +11,10 @@ extension Ordinal {
         associatedtype Domain: ~Copyable & ~Escapable
 
         associatedtype Count: Carrier.`Protocol`<Cardinal>
+        where Count.Domain == Domain
+
+        associatedtype Offset: Carrier.`Protocol`<Difference> = Tagged<Domain, Difference>
+        where Offset.Domain == Domain
 
         var ordinal: Ordinal { get }
 
@@ -23,6 +27,8 @@ extension Ordinal: Ordinal.`Protocol` {
     public typealias Domain = Never
 
     public typealias Count = Cardinal
+
+    public typealias Offset = Difference
 
     @inlinable
     public var ordinal: Ordinal { self }
@@ -40,6 +46,8 @@ where Underlying: Ordinal.`Protocol`, Tag: ~Copyable & ~Escapable {
 
     public typealias Count = Tagged<Tag, Cardinal>
 
+    public typealias Offset = Tagged<Tag, Difference>
+
     @inlinable
     public var ordinal: Ordinal { underlying.ordinal }
 
@@ -54,7 +62,12 @@ extension Ordinal.`Protocol` {
 
     @inlinable
     public static func + (lhs: Self, rhs: Count) -> Self {
-        Self(Ordinal(lhs.ordinal.rawValue + rhs.cardinal.rawValue))
+        let result = Advancement.reporting(
+            lhs.ordinal.rawValue,
+            by: rhs.cardinal.rawValue
+        )
+        precondition(!result.overflow, "Ordinal overflow in advancement")
+        return Self(Ordinal(result.value))
     }
 
     @inlinable

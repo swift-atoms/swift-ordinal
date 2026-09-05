@@ -1,4 +1,4 @@
-public import Ordinal_Distance
+public import Ordinal
 
 extension Swift.Range where Bound: Ordinal.`Protocol` {
 

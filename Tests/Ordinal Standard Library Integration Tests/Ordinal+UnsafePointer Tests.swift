@@ -1,3 +1,4 @@
+import Difference
 import Ordinal
 import Ordinal_Standard_Library_Integration
 import Tagged
@@ -34,6 +35,21 @@ extension Ordinal.`UnsafePointer Subscript`.Unit {
             let idx = Tagged::Tagged<Slot, Ordinal>(Ordinal(2))
             let val = unsafe ptr[idx]
             #expect(val == 30)
+        }
+    }
+
+    @Test
+    func `typed pointer arithmetic uses difference offset`() {
+        let values: [Int] = [10, 20, 30]
+        values.withUnsafeBufferPointer { buffer in
+            let start = buffer.baseAddress!
+            let offset = Tagged<Int, Ordinal>.Offset(_unchecked: Difference(2))
+            let end = unsafe start + offset
+            let distance: Tagged<Int, Ordinal>.Offset = unsafe end - start
+
+            #expect(unsafe end.pointee == 30)
+            #expect(distance == offset)
+            #expect(unsafe (end - offset).pointee == 10)
         }
     }
 }

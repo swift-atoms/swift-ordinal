@@ -1,6 +1,4 @@
-public import Ordinal
-
-extension Ordinal::Ordinal {
+extension Ordinal {
 
     @inlinable
     public init?(exactly value: Int) {

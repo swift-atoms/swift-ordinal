@@ -1,4 +1,3 @@
-public import Ordinal_Error
 public import Ordinal
 public import Tagged
 

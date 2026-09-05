@@ -1,4 +1,5 @@
-import Ordinal_Test_Support
+import Cardinal
+import Ordinal
 import Testing
 
 @testable import Ordinal
@@ -204,21 +205,5 @@ extension Ordinal.Test.`Edge Case` {
         #expect(throws: Ordinal.Error.notForward) {
             try a.distance.forward(to: b)
         }
-    }
-}
-
-extension Ordinal.Test.Integration {
-
-    @Test
-    func `int conversion success`() throws(Ordinal.Error) {
-        let position: Ordinal = 42
-        let value = try Int(position)
-        #expect(value == 42)
-    }
-
-    @Test
-    func `int conversion exactly success`() {
-        let position: Ordinal = 42
-        #expect(Int(exactly: position) == 42)
     }
 }

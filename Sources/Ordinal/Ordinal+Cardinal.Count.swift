@@ -1,5 +1,4 @@
 public import Cardinal
-public import Ordinal
 
 extension Ordinal {
 

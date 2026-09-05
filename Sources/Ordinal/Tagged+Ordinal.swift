@@ -1,6 +1,4 @@
 public import Cardinal
-public import Ordinal_Cardinal
-public import Ordinal
 public import Tagged
 
 extension Tagged where Underlying == Ordinal, Tag: ~Copyable & ~Escapable {

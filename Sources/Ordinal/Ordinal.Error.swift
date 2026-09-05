@@ -1,5 +1,3 @@
-public import Ordinal
-
 extension Ordinal {
 
     public enum Error: Swift.Error, Hashable, Sendable {

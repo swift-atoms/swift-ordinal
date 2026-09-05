@@ -1,7 +1,62 @@
+public import Difference
+public import Ordinal
+public import Tagged
+
 extension UnsafePointer {
 
     @inlinable
     public subscript(_ position: some Ordinal.`Protocol`) -> Pointee {
         unsafe self[Int(bitPattern: position.ordinal)]
+    }
+}
+
+@_transparent
+public func + <Pointee: ~Copyable>(
+    lhs: UnsafePointer<Pointee>,
+    rhs: Tagged<Pointee, Ordinal>.Offset
+) -> UnsafePointer<Pointee> {
+    guard let offset = try? rhs.difference.intValue() else {
+        preconditionFailure("Pointer offset is not representable as Int")
+    }
+    return unsafe lhs.advanced(by: offset)
+}
+
+@_transparent
+public func + <Pointee: ~Copyable>(
+    lhs: Tagged<Pointee, Ordinal>.Offset,
+    rhs: UnsafePointer<Pointee>
+) -> UnsafePointer<Pointee> {
+    unsafe rhs + lhs
+}
+
+@_transparent
+public func - <Pointee: ~Copyable>(
+    lhs: UnsafePointer<Pointee>,
+    rhs: Tagged<Pointee, Ordinal>.Offset
+) -> UnsafePointer<Pointee> {
+    guard let offset = try? (-rhs.difference).intValue() else {
+        preconditionFailure("Pointer offset is not representable as Int")
+    }
+    return unsafe lhs.advanced(by: offset)
+}
+
+@_transparent
+public func - <Pointee: ~Copyable>(
+    lhs: UnsafePointer<Pointee>,
+    rhs: UnsafePointer<Pointee>
+) -> Tagged<Pointee, Ordinal>.Offset {
+    Tagged<Pointee, Ordinal>.Offset(
+        _unchecked: Difference(unsafe rhs.distance(to: lhs))
+    )
+}
+
+extension UnsafePointer where Pointee: ~Copyable {
+
+    @inlinable @inline(always)
+    public subscript(index: Tagged<Pointee, Ordinal>) -> Pointee {
+        @_transparent
+        unsafeAddress {
+            unsafe self + Tagged<Pointee, Ordinal>.Offset(fromZero: index)
+        }
     }
 }

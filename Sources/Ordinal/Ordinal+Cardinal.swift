@@ -1,8 +1,6 @@
+public import Advancement
 public import Cardinal
-public import Cardinal_Carrier
 public import Carrier_Protocol
-public import Ordinal
-public import Ordinal_Protocol
 
 @inlinable
 @_disfavoredOverload
@@ -82,7 +80,12 @@ public func + <O: Ordinal.`Protocol`, C: Carrier.`Protocol`<Cardinal>>(
     lhs: O,
     rhs: C
 ) -> O where O.Domain == C.Domain {
-    O(Ordinal(lhs.ordinal.rawValue + rhs.cardinal.rawValue))
+    let result = Advancement.reporting(
+        lhs.ordinal.rawValue,
+        by: rhs.cardinal.rawValue
+    )
+    precondition(!result.overflow, "Ordinal overflow in advancement")
+    return O(Ordinal(result.value))
 }
 
 @inlinable

@@ -1,5 +1,4 @@
 public import Ordinal
-public import Ordinal_Protocol
 
 extension Array {
 

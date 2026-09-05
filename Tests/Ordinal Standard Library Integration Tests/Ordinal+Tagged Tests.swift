@@ -1,4 +1,6 @@
-import Ordinal_Test_Support
+import Cardinal
+import Ordinal
+import Ordinal_Standard_Library_Integration
 import Tagged
 import Tagged_Standard_Library_Integration
 import Testing
@@ -81,6 +83,14 @@ extension Ordinal.Tagged.Unit {
         let count: Tagged::Tagged<SlotPosition, Cardinal> = 3
         let result = try slot.advance.exact(by: count)
         #expect(result == 8)
+    }
+
+    @Test
+    func `retreat exact tagged count`() throws(Ordinal.Error) {
+        let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
+        let count: Tagged::Tagged<SlotPosition, Cardinal> = 3
+        let result = try slot.retreat.exact(by: count)
+        #expect(result == 2)
     }
 
     @Test
