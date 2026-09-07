@@ -22,10 +22,16 @@ extension Swift.UnsafeMutablePointer {
     @inlinable
     public subscript(_ position: some Ordinal.`Protocol`) -> Pointee {
         get {
-            unsafe self[Int(bitPattern: position.ordinal)]
+            guard let index = Int(exactly: position.ordinal) else {
+                preconditionFailure("Pointer position is not representable as Int")
+            }
+            return unsafe self[index]
         }
         nonmutating set {
-            unsafe self[Int(bitPattern: position.ordinal)] = newValue
+            guard let index = Int(exactly: position.ordinal) else {
+                preconditionFailure("Pointer position is not representable as Int")
+            }
+            unsafe self[index] = newValue
         }
     }
 }

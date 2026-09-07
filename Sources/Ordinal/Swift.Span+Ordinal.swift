@@ -9,9 +9,12 @@ extension Swift.Span where Element: ~Copyable {
         _unsafeStart start: UnsafePointer<Element>,
         count: Tagged<Element, Ordinal>.Count
     ) {
+        guard let length = try? Int(count.underlying) else {
+            preconditionFailure("Span count is not representable as Int")
+        }
         let span = unsafe Swift.Span(
             _unsafeStart: start,
-            count: Int(bitPattern: count.underlying)
+            count: length
         )
         unsafe (self = _overrideLifetime(span, borrowing: ()))
     }

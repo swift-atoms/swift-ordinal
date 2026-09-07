@@ -9,9 +9,12 @@ extension Property::Property {
         from source: UnsafeMutablePointer<Pointee>,
         count: Tagged<Pointee, Ordinal>.Count
     ) where Tag == UnsafeMutablePointer<Pointee>.Move, Base == UnsafeMutablePointer<Pointee> {
+        guard let length = try? Int(count.underlying) else {
+            preconditionFailure("Move count is not representable as Int")
+        }
         unsafe base.moveInitialize(
             from: source,
-            count: Int(bitPattern: count.underlying)
+            count: length
         )
     }
 
@@ -20,6 +23,9 @@ extension Property::Property {
         from source: UnsafeMutablePointer<Pointee>,
         count: Tagged<Pointee, Ordinal>.Count
     ) where Tag == UnsafeMutablePointer<Pointee>.Move, Base == UnsafeMutablePointer<Pointee> {
-        unsafe base.moveUpdate(from: source, count: Int(bitPattern: count.underlying))
+        guard let length = try? Int(count.underlying) else {
+            preconditionFailure("Move count is not representable as Int")
+        }
+        unsafe base.moveUpdate(from: source, count: length)
     }
 }

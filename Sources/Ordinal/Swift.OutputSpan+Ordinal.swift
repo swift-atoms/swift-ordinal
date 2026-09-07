@@ -6,9 +6,9 @@ extension Swift.OutputSpan where Element: ~Copyable {
         _ i: some Ordinal.`Protocol`,
         _ j: some Ordinal.`Protocol`
     ) {
-        swapAt(
-            Int(bitPattern: i.ordinal),
-            Int(bitPattern: j.ordinal)
-        )
+        guard let first = Int(exactly: i.ordinal), let second = Int(exactly: j.ordinal) else {
+            preconditionFailure("Span position is not representable as Int")
+        }
+        swapAt(first, second)
     }
 }

@@ -8,7 +8,10 @@ extension Swift.UnsafeMutableBufferPointer where Element: ~Copyable {
         start: UnsafeMutablePointer<Element>?,
         count: Tagged<Element, Ordinal>.Count
     ) {
-        unsafe self.init(start: start, count: Int(bitPattern: count.underlying))
+        guard let length = try? Int(count.underlying) else {
+            preconditionFailure("Buffer count is not representable as Int")
+        }
+        unsafe self.init(start: start, count: length)
     }
 }
 
@@ -19,10 +22,16 @@ extension Swift.UnsafeMutableBufferPointer {
         _ index: Tagged<Element, Ordinal>
     ) -> Element {
         get {
-            unsafe self[Int(bitPattern: index.underlying)]
+            guard let position = Int(exactly: index.underlying) else {
+                preconditionFailure("Buffer position is not representable as Int")
+            }
+            return unsafe self[position]
         }
         nonmutating set {
-            unsafe self[Int(bitPattern: index.underlying)] = newValue
+            guard let position = Int(exactly: index.underlying) else {
+                preconditionFailure("Buffer position is not representable as Int")
+            }
+            unsafe self[position] = newValue
         }
     }
 }
