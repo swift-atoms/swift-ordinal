@@ -1,4 +1,4 @@
-extension InlineArray {
+extension Swift.ContiguousArray {
 
     @inlinable
     public subscript(_ position: some Ordinal.`Protocol`) -> Element {

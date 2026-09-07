@@ -1,15 +1,15 @@
-public import Cardinal_Standard_Library_Integration
+public import Cardinal
 public import Tagged
 
-extension Swift.MutableSpan where Element: ~Copyable {
+extension Swift.Span where Element: ~Copyable {
 
     @_lifetime(immortal)
     @inlinable
     public init(
-        _unsafeStart start: UnsafeMutablePointer<Element>,
+        _unsafeStart start: UnsafePointer<Element>,
         count: Tagged<Element, Ordinal>.Count
     ) {
-        let span = unsafe Swift.MutableSpan(
+        let span = unsafe Swift.Span(
             _unsafeStart: start,
             count: Int(bitPattern: count.underlying)
         )

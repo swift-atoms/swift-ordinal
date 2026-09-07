@@ -1,9 +1,7 @@
 public import Cardinal
-public import Cardinal_Standard_Library_Integration
-public import Ordinal
 public import Tagged
 
-extension Array {
+extension Swift.Array {
 
     @inlinable
     public init<Tag: ~Copyable & ~Escapable, E: Swift.Error>(
@@ -14,5 +12,13 @@ extension Array {
         self = try (0..<n).map { (index: Int) throws(E) -> Element in
             try element(Tagged<Tag, Ordinal>(Ordinal(UInt(index))))
         }
+    }
+}
+
+extension Swift.Array {
+
+    @inlinable
+    public subscript(_ position: some Ordinal.`Protocol`) -> Element {
+        self[Int(bitPattern: position.ordinal)]
     }
 }

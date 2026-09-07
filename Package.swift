@@ -12,8 +12,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Ordinal", targets: ["Ordinal"]),
-        .library(name: "Ordinal Standard Library Integration", targets: ["Ordinal Standard Library Integration"]),
-        .library(name: "Ordinal Foundation Library Integration", targets: ["Ordinal Foundation Library Integration"]),
+
+        .library(name: "Ordinal Foundation Integration", targets: ["Ordinal Foundation Integration"]),
         .library(name: "Ordinal Test Support", targets: ["Ordinal Test Support"]),
     ],
     dependencies: [
@@ -80,25 +80,13 @@ let package = Package(
             ],
             path: "Sources/Ordinal"
         ),
+        
         .target(
-            name: "Ordinal Standard Library Integration",
+            name: "Ordinal Foundation Integration",
             dependencies: [
                 .target(name: "Ordinal"),
-                .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Cardinal Standard Library Integration", package: "swift-cardinal"),
-                .product(name: "Difference", package: "swift-difference"),
-                .product(name: "Property", package: "swift-property"),
-                .product(name: "Tagged", package: "swift-tagged"),
             ],
-            path: "Sources/Ordinal Standard Library Integration"
-        ),
-        .target(
-            name: "Ordinal Foundation Library Integration",
-            dependencies: [
-                .target(name: "Ordinal"),
-                .target(name: "Ordinal Standard Library Integration"),
-            ],
-            path: "Sources/Ordinal Foundation Library Integration"
+            path: "Sources/Ordinal Foundation Integration"
         ),
         .target(
             name: "Ordinal Test Support",
@@ -112,12 +100,10 @@ let package = Package(
             dependencies: [
                 .target(name: "Ordinal"),
                 .product(name: "Tagged", package: "swift-tagged"),
-                .product(name: "Tagged Standard Library Integration", package: "swift-tagged"),
-                .target(name: "Ordinal Standard Library Integration"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Difference", package: "swift-difference"),
                 .target(name: "Ordinal Test Support"),
-                .target(name: "Ordinal Foundation Library Integration"),
+                .target(name: "Ordinal Foundation Integration"),
             ],
             path: "Tests/Ordinal Tests"
         ),

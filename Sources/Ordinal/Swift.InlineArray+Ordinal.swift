@@ -1,6 +1,4 @@
-public import Ordinal
-
-extension ContiguousArray {
+extension Swift.InlineArray {
 
     @inlinable
     public subscript(_ position: some Ordinal.`Protocol`) -> Element {

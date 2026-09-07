@@ -1,4 +1,4 @@
-extension UnsafeMutableRawPointer {
+extension Swift.UnsafeMutableRawPointer {
 
     @inlinable
     public func advanced(by offset: some Ordinal.`Protocol`) -> Self {

@@ -1,7 +1,6 @@
-public import Ordinal
 public import Tagged
 
-extension Int {
+extension Swift.Int {
 
     @inlinable
     public init?(exactly position: Ordinal) {
@@ -28,7 +27,7 @@ extension Int {
     }
 }
 
-extension Int {
+extension Swift.Int {
 
     @inlinable
     public init?<Tag: ~Copyable & ~Escapable>(exactly position: Tagged<Tag, Ordinal>) {

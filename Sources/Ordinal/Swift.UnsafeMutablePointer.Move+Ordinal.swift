@@ -1,19 +1,6 @@
-public import Cardinal_Standard_Library_Integration
+public import Cardinal
 public import Property
 public import Tagged
-
-extension UnsafeMutablePointer where Pointee: ~Copyable {
-
-    public enum Move {}
-}
-
-extension UnsafeMutablePointer where Pointee: ~Copyable {
-
-    @inlinable
-    public var move: Property::Property<Move, Self> {
-        unsafe Property::Property(self)
-    }
-}
 
 extension Property::Property {
 

@@ -2,7 +2,6 @@ import Cardinal
 import Difference
 import Ordinal
 import Tagged
-import Tagged_Standard_Library_Integration
 import Testing
 
 private enum CoordinateDomain {}

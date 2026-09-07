@@ -1,4 +1,4 @@
-extension MutableCollection where Self.Index == Int {
+extension Swift.MutableCollection where Self.Index == Int {
 
     @inlinable
     public mutating func swapAt(_ i: some Ordinal.`Protocol`, _ j: some Ordinal.`Protocol`) {

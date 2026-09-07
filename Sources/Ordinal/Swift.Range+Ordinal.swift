@@ -1,5 +1,3 @@
-public import Ordinal
-
 extension Swift.Range where Bound: Ordinal.`Protocol` {
 
     @inlinable

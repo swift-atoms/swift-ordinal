@@ -1,4 +1,4 @@
-extension UInt32 {
+extension Swift.UInt32 {
 
     @inlinable
     public init(_ position: some Ordinal.`Protocol`) {

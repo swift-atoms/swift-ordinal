@@ -1,9 +1,23 @@
 public import Cardinal
-public import Difference
-public import Ordinal
+public import Property
 public import Tagged
 
-extension UnsafeMutablePointer {
+extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
+
+    public enum Move {}
+}
+
+extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
+
+    @inlinable
+    public var move: Property::Property<Move, Self> {
+        unsafe Property::Property(self)
+    }
+}
+
+public import Difference
+
+extension Swift.UnsafeMutablePointer {
 
     @inlinable
     public subscript(_ position: some Ordinal.`Protocol`) -> Pointee {
@@ -56,7 +70,7 @@ public func - <Pointee: ~Copyable>(
     )
 }
 
-extension UnsafeMutablePointer where Pointee: ~Copyable {
+extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
 
     @inlinable @inline(always)
     public subscript(index: Tagged<Pointee, Ordinal>) -> Pointee {
@@ -84,7 +98,7 @@ extension UnsafeMutablePointer where Pointee: ~Copyable {
     }
 }
 
-extension UnsafeMutablePointer {
+extension Swift.UnsafeMutablePointer {
 
     @inlinable
     public static func allocate(
@@ -127,7 +141,7 @@ extension UnsafeMutablePointer {
     }
 }
 
-extension UnsafeMutablePointer where Pointee: ~Copyable {
+extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
 
     @inlinable
     @discardableResult

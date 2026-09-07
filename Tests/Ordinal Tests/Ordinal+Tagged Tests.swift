@@ -1,7 +1,6 @@
 import Cardinal
-import Ordinal_Standard_Library_Integration
+import Ordinal
 import Tagged
-import Tagged_Standard_Library_Integration
 import Testing
 
 @testable import Ordinal

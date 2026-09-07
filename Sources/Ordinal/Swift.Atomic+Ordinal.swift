@@ -1,10 +1,22 @@
 #if SYNCHRONIZATION_AVAILABLE
-    public import Cardinal
-    public import Carrier
-    public import Ordinal
-    public import Synchronization
+public import Cardinal
+#endif
 
-    extension Atomic
+#if SYNCHRONIZATION_AVAILABLE
+public import Carrier
+#endif
+
+#if SYNCHRONIZATION_AVAILABLE
+public import Ordinal
+#endif
+
+#if SYNCHRONIZATION_AVAILABLE
+public import Synchronization
+#endif
+
+
+#if SYNCHRONIZATION_AVAILABLE
+extension Atomic
     where
         Value: Ordinal.`Protocol` & AtomicRepresentable,
         Value.AtomicRepresentation == UInt.AtomicRepresentation

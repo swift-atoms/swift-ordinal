@@ -3,7 +3,7 @@ public struct Ordinal {
     public let rawValue: UInt
 }
 
-extension Ordinal: Sendable {}
+extension Ordinal: Swift.Sendable {}
 
 extension Ordinal {
 

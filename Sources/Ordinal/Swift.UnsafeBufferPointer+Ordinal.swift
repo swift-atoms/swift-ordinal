@@ -1,7 +1,7 @@
-public import Cardinal_Standard_Library_Integration
+public import Cardinal
 public import Tagged
 
-extension UnsafeBufferPointer where Element: ~Copyable {
+extension Swift.UnsafeBufferPointer where Element: ~Copyable {
 
     @inlinable
     public init(
@@ -12,7 +12,7 @@ extension UnsafeBufferPointer where Element: ~Copyable {
     }
 }
 
-extension UnsafeBufferPointer {
+extension Swift.UnsafeBufferPointer {
 
     @inlinable
     public subscript(

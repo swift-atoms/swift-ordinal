@@ -1,8 +1,7 @@
 public import Difference
-public import Ordinal
 public import Tagged
 
-extension UnsafePointer {
+extension Swift.UnsafePointer {
 
     @inlinable
     public subscript(_ position: some Ordinal.`Protocol`) -> Pointee {
@@ -50,7 +49,7 @@ public func - <Pointee: ~Copyable>(
     )
 }
 
-extension UnsafePointer where Pointee: ~Copyable {
+extension Swift.UnsafePointer where Pointee: ~Copyable {
 
     @inlinable @inline(always)
     public subscript(index: Tagged<Pointee, Ordinal>) -> Pointee {
