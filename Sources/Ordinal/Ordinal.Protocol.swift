@@ -1,6 +1,6 @@
 public import Advancement
 public import Cardinal
-public import Carrier_Protocol
+public import Carrier
 public import Difference
 public import Tagged
 

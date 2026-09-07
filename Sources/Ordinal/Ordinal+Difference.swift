@@ -1,7 +1,7 @@
 public import Advancement
 public import Magnitude
 public import Cardinal
-public import Carrier_Protocol
+public import Carrier
 public import Difference
 public import Distance
 public import Retreat

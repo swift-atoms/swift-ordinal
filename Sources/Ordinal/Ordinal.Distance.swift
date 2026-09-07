@@ -1,5 +1,5 @@
 public import Cardinal
-public import Carrier_Protocol
+public import Carrier
 public import Distance
 public import Property
 

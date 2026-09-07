@@ -4,17 +4,27 @@ import PackageDescription
 let package = Package(
     name: "swift-ordinal",
     platforms: [
-        .macOS(.v27), .iOS(.v27), .tvOS(.v27), .watchOS(.v27), .visionOS(.v27),
+        .macOS(.v27),
+        .iOS(.v27),
+        .tvOS(.v27),
+        .watchOS(.v27),
+        .visionOS(.v27),
     ],
     products: [
-        .library(name: "Ordinal", targets: ["Ordinal"]),
+        .library(
+            name: "Ordinal",
+            targets: ["Ordinal"]
+        ),
         .library(
             name: "Ordinal Standard Library Integration",
             targets: ["Ordinal Standard Library Integration"]
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-atoms/swift-magnitude.git", branch: "main"),
+        .package(
+            url: "https://github.com/swift-atoms/swift-magnitude.git",
+            branch: "main"
+        ),
         .package(
             url: "https://github.com/swift-atoms/swift-tagged.git",
             branch: "main"
@@ -63,7 +73,7 @@ let package = Package(
                 .product(name: "Magnitude", package: "swift-magnitude"),
                 .product(name: "Advancement", package: "swift-advancement"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Carrier Protocol", package: "swift-carrier"),
+                .product(name: "Carrier", package: "swift-carrier"),
                 .product(name: "Difference", package: "swift-difference"),
                 .product(name: "Distance", package: "swift-distance"),
                 .product(name: "Predecessor", package: "swift-predecessor"),

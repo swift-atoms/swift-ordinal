@@ -1,6 +1,6 @@
 @_exported import Advancement
 @_exported import Cardinal
-@_exported import Carrier_Protocol
+@_exported import Carrier
 @_exported import Difference
 @_exported import Distance
 @_exported import Magnitude
