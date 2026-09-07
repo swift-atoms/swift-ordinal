@@ -1,11 +1,11 @@
-@_exported import Advancement
-@_exported import Cardinal
-@_exported import Carrier
-@_exported import Difference
-@_exported import Distance
-@_exported import Magnitude
-@_exported import Predecessor
-@_exported import Property
-@_exported import Retreat
-@_exported import Successor
-@_exported import Tagged
+@_exported public import Advancement
+@_exported public import Cardinal
+@_exported public import Carrier
+@_exported public import Difference
+@_exported public import Distance
+@_exported public import Magnitude
+@_exported public import Predecessor
+@_exported public import Property
+@_exported public import Retreat
+@_exported public import Successor
+@_exported public import Tagged

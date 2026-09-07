@@ -1,5 +1,4 @@
 import Cardinal
-import Ordinal
 import Testing
 
 @testable import Ordinal

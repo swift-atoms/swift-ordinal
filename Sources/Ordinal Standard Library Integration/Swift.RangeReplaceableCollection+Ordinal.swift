@@ -1,4 +1,4 @@
-extension RangeReplaceableCollection where Self.Index == Int {
+extension Swift.RangeReplaceableCollection where Self.Index == Int {
 
     @inlinable
     public mutating func insert(_ newElement: __owned Element, at i: some Ordinal.`Protocol`) {

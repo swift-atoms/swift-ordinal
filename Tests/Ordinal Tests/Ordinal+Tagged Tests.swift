@@ -1,5 +1,4 @@
 import Cardinal
-import Ordinal
 import Ordinal_Standard_Library_Integration
 import Tagged
 import Tagged_Standard_Library_Integration
