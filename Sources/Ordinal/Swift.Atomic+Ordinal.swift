@@ -7,10 +7,6 @@ public import Carrier
 #endif
 
 #if SYNCHRONIZATION_AVAILABLE
-public import Ordinal
-#endif
-
-#if SYNCHRONIZATION_AVAILABLE
 public import Synchronization
 #endif
 

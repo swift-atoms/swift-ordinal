@@ -1,5 +1,5 @@
 #if SYNCHRONIZATION_AVAILABLE
-public import Synchronization
+import Synchronization
 #endif
 
 
