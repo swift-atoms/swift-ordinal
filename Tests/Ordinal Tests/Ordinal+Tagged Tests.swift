@@ -10,36 +10,36 @@ private enum LanePosition {}
 
 extension Ordinal {
     @Suite
-    struct Tagged {
-        @Suite struct Unit {}
-        @Suite struct `Edge Case` {}
-        @Suite struct Integration {}
-        @Suite(.serialized) struct Performance {}
+    struct `Tagged ordinals retain their position domain through arithmetic and conversion` {
+        @Suite struct `Tagged ordinal operations preserve positions counts and ranges` {}
+        @Suite struct `Tagged ordinal arithmetic reports boundary failures` {}
+        @Suite struct `Tagged ordinal conversions preserve exact values and explicit bit patterns` {}
+        @Suite(.serialized) struct `No tagged ordinal performance cases are defined` {}
     }
 }
 
-extension Ordinal.Tagged.Unit {
+extension Ordinal.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal operations preserve positions counts and ranges` {
 
     @Test
-    func `construction from ordinal`() {
+    func `Tagged ordinal construction preserves its underlying position`() {
         let slot = Tagged::Tagged<SlotPosition, Ordinal>(Ordinal(3))
         #expect(slot.position == Ordinal(3))
     }
 
     @Test
-    func `construction from integer literal`() {
+    func `Tagged ordinal literals retain the requested position`() {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         #expect(slot.position == 5)
     }
 
     @Test
-    func `zero constant`() {
+    func `The zero ordinal represents position zero`() {
         #expect(Tagged::Tagged<SlotPosition, Ordinal>.zero == 0)
         #expect(Tagged::Tagged<SlotPosition, Ordinal>.zero.position == .zero)
     }
 
     @Test
-    func `cross tag comparison forbidden`() {
+    func `Equal tagged ordinal values compare equally within one domain`() {
 
         let slotA: Tagged::Tagged<SlotPosition, Ordinal> = 7
         let slotB: Tagged::Tagged<SlotPosition, Ordinal> = 7
@@ -47,28 +47,28 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `successor saturating`() {
+    func `Saturating ordinal successor advances an interior position by one`() {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let next = slot.successor.saturating()
         #expect(next == 6)
     }
 
     @Test
-    func `successor exact`() throws(Ordinal.Error) {
+    func `Exact ordinal successor advances an interior position by one`() throws(Ordinal.Error) {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let next = try slot.successor.exact()
         #expect(next == 6)
     }
 
     @Test
-    func `predecessor exact`() throws(Ordinal.Error) {
+    func `Exact ordinal predecessor retreats an interior position by one`() throws(Ordinal.Error) {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let prev = try slot.predecessor.exact()
         #expect(prev == 4)
     }
 
     @Test
-    func `advance saturating tagged count`() {
+    func `Saturating tagged advancement adds a count from the same domain`() {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let count: Tagged::Tagged<SlotPosition, Cardinal> = 3
         let result = slot.advance.saturating(by: count)
@@ -76,7 +76,7 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `advance exact tagged count`() throws(Ordinal.Error) {
+    func `Exact tagged advancement adds a count from the same domain`() throws(Ordinal.Error) {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let count: Tagged::Tagged<SlotPosition, Cardinal> = 3
         let result = try slot.advance.exact(by: count)
@@ -84,7 +84,7 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `retreat exact tagged count`() throws(Ordinal.Error) {
+    func `Exact tagged retreat subtracts a count from the same domain`() throws(Ordinal.Error) {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let count: Tagged::Tagged<SlotPosition, Cardinal> = 3
         let result = try slot.retreat.exact(by: count)
@@ -92,7 +92,7 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `advance via plus operator`() {
+    func `Tagged ordinal addition advances by the supplied count`() {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let count: Tagged::Tagged<SlotPosition, Cardinal> = 3
         let result = slot + count
@@ -100,7 +100,7 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `distance forward tagged`() throws(Ordinal.Error) {
+    func `Forward tagged distance returns a count in the same domain`() throws(Ordinal.Error) {
         let a: Tagged::Tagged<SlotPosition, Ordinal> = 3
         let b: Tagged::Tagged<SlotPosition, Ordinal> = 8
         let distance = try a.distance.forward(to: b)
@@ -108,7 +108,7 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `distance unchecked forward monotonic`() {
+    func `Unchecked forward distance counts the positions between ordered ordinals`() {
 
         let a: Ordinal = 3
         let b: Ordinal = 8
@@ -117,7 +117,7 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `range count tagged`() {
+    func `A tagged ordinal range exposes its count in the same domain`() {
         let lower: Tagged::Tagged<SlotPosition, Ordinal> = 3
         let upper: Tagged::Tagged<SlotPosition, Ordinal> = 8
         let range = lower..<upper
@@ -132,7 +132,7 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `range init from start and count`() {
+    func `A tagged range derives its upper bound from the start and count`() {
         let start: Tagged::Tagged<SlotPosition, Ordinal> = 3
         let count: Tagged::Tagged<SlotPosition, Cardinal> = 5
         let range = Swift.Range(start: start, count: count)
@@ -141,14 +141,14 @@ extension Ordinal.Tagged.Unit {
     }
 
     @Test
-    func `cardinal from ordinal`() {
+    func `A tagged ordinal converts to a count in the same domain`() {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 5
         let count = Tagged::Tagged<SlotPosition, Cardinal>(slot)
         #expect(count == 5)
     }
 }
 
-extension Ordinal.Tagged.`Edge Case` {
+extension Ordinal.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal arithmetic reports boundary failures` {
 
     @Test
     func `successor exact throws at max`() {
@@ -184,23 +184,23 @@ extension Ordinal.Tagged.`Edge Case` {
     }
 }
 
-extension Ordinal.Tagged.Integration {
+extension Ordinal.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal conversions preserve exact values and explicit bit patterns` {
 
     @Test
-    func `int exactly from tagged ordinal`() {
+    func `Failable tagged ordinal conversion returns the exact Int value`() {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 42
         #expect(Int(exactly: slot) == 42)
     }
 
     @Test
-    func `int from tagged ordinal`() throws(Ordinal.Error) {
+    func `Throwing tagged ordinal conversion returns the exact Int value`() throws(Ordinal.Error) {
         let slot: Tagged::Tagged<SlotPosition, Ordinal> = 42
         let value = try Int(slot)
         #expect(value == 42)
     }
 
     @Test
-    func `int bit pattern from tagged ordinal`() {
+    func `Tagged ordinal bit pattern conversion preserves every unsigned bit`() {
         let slot = Tagged::Tagged<SlotPosition, Ordinal>(Ordinal(UInt.max))
         let bits = Int(bitPattern: slot)
         #expect(bits == -1)

@@ -17,7 +17,7 @@ private struct Step: Ordinal.`Protocol`, Equatable {
 }
 
 @Suite
-struct `Ordinal Generic Operation Tests` {
+struct `Generic ordinal operations preserve their carrier and count domain` {
 
     @Test
     func `successor and predecessor preserve a custom ordinal carrier`() throws {

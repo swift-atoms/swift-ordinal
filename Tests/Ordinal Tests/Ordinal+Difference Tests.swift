@@ -21,7 +21,7 @@ private func inferredOffset<O: Ordinal.`Protocol`>(_ lhs: O, _ rhs: O) -> O.Offs
     lhs - rhs
 }
 
-extension Ordinal.Test.Unit {
+extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal construction arithmetic and conversions preserve positions and distances` {
 
     @Test
     func `difference translates ordinal in both directions`() throws(Ordinal.Error) {
@@ -48,7 +48,7 @@ extension Ordinal.Test.Unit {
     }
 
     @Test
-    func `ordinal construction from difference`() throws(Ordinal.Error) {
+    func `Ordinal construction accepts the largest positive difference and rejects a negative difference`() throws(Ordinal.Error) {
         #expect(try Ordinal(.positive(Difference.Magnitude(Cardinal(Cardinal.max)))) == Ordinal(UInt.max))
         #expect(throws: Ordinal.Error.underflow) {
             try Ordinal(.negative(Difference.Magnitude(Cardinal(Cardinal.max))))
@@ -56,7 +56,7 @@ extension Ordinal.Test.Unit {
     }
 }
 
-extension Ordinal.Test.`Edge Case` {
+extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal boundaries distinguish saturation from typed arithmetic failures` {
 
     @Test
     func `difference translation reports ordinal bounds`() {
@@ -69,7 +69,7 @@ extension Ordinal.Test.`Edge Case` {
     }
 }
 
-extension Ordinal.Test.Integration {
+extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal displacement adapters preserve carrier wrappers and tagged domains` {
 
     @Test
     func `custom ordinal carrier preserves its wrapper and domain`() throws(Ordinal.Error) {

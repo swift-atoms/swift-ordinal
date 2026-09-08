@@ -4,18 +4,18 @@ import Testing
 
 extension Ordinal {
     @Suite
-    struct `UnsafeMutablePointer Subscript` {
-        @Suite struct Unit {}
-        @Suite struct `Edge Case` {}
-        @Suite struct Integration {}
-        @Suite(.serialized) struct Performance {}
+    struct `Mutable pointers access elements at typed ordinal positions` {
+        @Suite struct `Mutable pointers preserve element access through bare and tagged ordinals` {}
+        @Suite struct `No UnsafeMutablePointer ordinal subscript boundary cases are defined` {}
+        @Suite struct `No UnsafeMutablePointer ordinal subscript integration cases are defined` {}
+        @Suite(.serialized) struct `No UnsafeMutablePointer ordinal subscript performance cases are defined` {}
     }
 }
 
-extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
+extension Ordinal.`Mutable pointers access elements at typed ordinal positions`.`Mutable pointers preserve element access through bare and tagged ordinals` {
 
     @Test
-    func `get via ordinal`() {
+    func `A mutable pointer reads the element at a bare ordinal position`() {
         var values: [Int] = [10, 20, 30]
         values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
@@ -25,7 +25,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
     }
 
     @Test
-    func `set via ordinal`() {
+    func `A mutable pointer replaces the element at a bare ordinal position`() {
         var values: [Int] = [10, 20, 30]
         values.withUnsafeMutableBufferPointer { buf in
             let ptr = buf.baseAddress!
@@ -35,7 +35,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
     }
 
     @Test
-    func `get via tagged ordinal`() {
+    func `A mutable pointer reads the element at a tagged ordinal position`() {
         struct Slot: ~Copyable {}
         var values: [Int] = [10, 20, 30]
         values.withUnsafeMutableBufferPointer { buf in
@@ -47,7 +47,7 @@ extension Ordinal.`UnsafeMutablePointer Subscript`.Unit {
     }
 
     @Test
-    func `set via tagged ordinal`() {
+    func `A mutable pointer replaces the element at a tagged ordinal position`() {
         struct Slot: ~Copyable {}
         var values: [Int] = [10, 20, 30]
         values.withUnsafeMutableBufferPointer { buf in

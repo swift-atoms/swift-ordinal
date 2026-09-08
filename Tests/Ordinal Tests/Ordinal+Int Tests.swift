@@ -3,20 +3,20 @@ import Testing
 
 extension Ordinal {
     @Suite
-    struct `Int Conversion` {}
+    struct `Representable ordinal positions convert exactly to Int` {}
 }
 
-extension Ordinal.`Int Conversion` {
+extension Ordinal.`Representable ordinal positions convert exactly to Int` {
 
     @Test
-    func `int conversion success`() throws(Ordinal.Error) {
+    func `Throwing ordinal conversion preserves a representable Int value`() throws(Ordinal.Error) {
         let position: Ordinal = 42
         let value = try Int(position)
         #expect(value == 42)
     }
 
     @Test
-    func `int conversion exactly success`() {
+    func `Failable ordinal conversion returns a representable Int value`() {
         let position: Ordinal = 42
         #expect(Int(exactly: position) == 42)
     }
