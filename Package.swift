@@ -18,9 +18,6 @@ let package = Package(
     ],
     dependencies: [
 
-        .package(url: "https://github.com/swift-atoms/swift-comparison.git", branch: "main"),
-        .package(url: "https://github.com/swift-atoms/swift-equation.git", branch: "main"),
-        .package(url: "https://github.com/swift-atoms/swift-hash.git", branch: "main"),
 
         .package(
             url: "https://github.com/swift-atoms/swift-magnitude.git",
@@ -71,7 +68,6 @@ let package = Package(
         .target(
             name: "Ordinal",
             dependencies: [
-                .product(name: "Hash", package: "swift-hash"),
                 .product(name: "Magnitude", package: "swift-magnitude"),
                 .product(name: "Advancement", package: "swift-advancement"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
@@ -112,33 +108,6 @@ let package = Package(
                 .target(name: "Ordinal Foundation Integration"),
             ],
             path: "Tests/Ordinal Tests"
-        ),
-        .testTarget(
-            name: "Consolidated Ordinal Comparison Tests",
-            dependencies: [
-
-                .target(name: "Ordinal"),
-                .product(name: "Comparison", package: "swift-comparison"),
-            ],
-            path: "Tests/Consolidated swift-ordinal-comparison"
-        ),
-        .testTarget(
-            name: "Consolidated Ordinal Equation Tests",
-            dependencies: [
-
-                .target(name: "Ordinal"),
-                .product(name: "Equation", package: "swift-equation"),
-            ],
-            path: "Tests/Consolidated swift-ordinal-equation"
-        ),
-        .testTarget(
-            name: "Consolidated Ordinal Hash Tests",
-            dependencies: [
-
-                .target(name: "Ordinal"),
-                .product(name: "Hash", package: "swift-hash"),
-            ],
-            path: "Tests/Consolidated swift-ordinal-hash"
         ),
         .testTarget(
             name: "Consolidated Ordinal Property Tests",
