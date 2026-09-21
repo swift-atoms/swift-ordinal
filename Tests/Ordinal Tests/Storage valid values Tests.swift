@@ -1,3 +1,4 @@
+#if Tagged
 import Cardinal
 import Ordinal
 import Tagged
@@ -152,3 +153,5 @@ private enum ElementFailure: Swift.Error { case element }
         #expect(bytes == [10, 21])
     }
 }
+
+#endif

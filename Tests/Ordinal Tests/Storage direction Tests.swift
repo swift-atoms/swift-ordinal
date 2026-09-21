@@ -1,3 +1,4 @@
+#if Tagged
 import Ordinal
 import Tagged
 import Testing
@@ -152,3 +153,5 @@ private struct SignedIndices: MutableCollection, RangeReplaceableCollection {
         )
     }
 }
+
+#endif

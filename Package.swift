@@ -16,6 +16,9 @@ let package = Package(
         .library(name: "Ordinal Foundation Integration", targets: ["Ordinal Foundation Integration"]),
         .library(name: "Ordinal Test Support", targets: ["Ordinal Test Support"]),
     ],
+    traits: [
+        .trait(name: "Tagged", description: "Tagged integration"),
+    ],
     dependencies: [
 
 
@@ -33,7 +36,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-cardinal.git",
-            branch: "main"
+            branch: "main", traits: [.trait(name: "Tagged", condition: .when(traits: ["Tagged"]))]
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-difference.git",
@@ -68,17 +71,17 @@ let package = Package(
         .target(
             name: "Ordinal",
             dependencies: [
-                .product(name: "Magnitude", package: "swift-magnitude"),
-                .product(name: "Advancement", package: "swift-advancement"),
+                .product(name: "Magnitude", package: "swift-magnitude", condition: .when(traits: ["Tagged"])),
+                .product(name: "Advancement", package: "swift-advancement", condition: .when(traits: ["Tagged"])),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Carrier", package: "swift-carrier"),
-                .product(name: "Difference", package: "swift-difference"),
-                .product(name: "Distance", package: "swift-distance"),
-                .product(name: "Predecessor", package: "swift-predecessor"),
-                .product(name: "Property", package: "swift-property"),
-                .product(name: "Retreat", package: "swift-retreat"),
-                .product(name: "Successor", package: "swift-successor"),
-                .product(name: "Tagged", package: "swift-tagged"),
+                .product(name: "Carrier", package: "swift-carrier", condition: .when(traits: ["Tagged"])),
+                .product(name: "Difference", package: "swift-difference", condition: .when(traits: ["Tagged"])),
+                .product(name: "Distance", package: "swift-distance", condition: .when(traits: ["Tagged"])),
+                .product(name: "Predecessor", package: "swift-predecessor", condition: .when(traits: ["Tagged"])),
+                .product(name: "Property", package: "swift-property", condition: .when(traits: ["Tagged"])),
+                .product(name: "Retreat", package: "swift-retreat", condition: .when(traits: ["Tagged"])),
+                .product(name: "Successor", package: "swift-successor", condition: .when(traits: ["Tagged"])),
+                .product(name: "Tagged", package: "swift-tagged", condition: .when(traits: ["Tagged"])),
             ],
             path: "Sources/Ordinal"
         ),
@@ -101,9 +104,9 @@ let package = Package(
             name: "Ordinal Tests",
             dependencies: [
                 .target(name: "Ordinal"),
-                .product(name: "Tagged", package: "swift-tagged"),
+                .product(name: "Tagged", package: "swift-tagged", condition: .when(traits: ["Tagged"])),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Difference", package: "swift-difference"),
+                .product(name: "Difference", package: "swift-difference", condition: .when(traits: ["Tagged"])),
                 .target(name: "Ordinal Test Support"),
                 .target(name: "Ordinal Foundation Integration"),
             ],
@@ -115,22 +118,22 @@ let package = Package(
 
                 .target(name: "Ordinal"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
-                .product(name: "Carrier", package: "swift-carrier"),
-                .product(name: "Property", package: "swift-property"),
+                .product(name: "Carrier", package: "swift-carrier", condition: .when(traits: ["Tagged"])),
+                .product(name: "Property", package: "swift-property", condition: .when(traits: ["Tagged"])),
             ],
             path: "Tests/Consolidated swift-ordinal-property"
         ),
         .testTarget(name: "Ordinal Difference Carrier Migration Tests", dependencies: [
             .target(name: "Ordinal"),
-            .product(name: "Difference", package: "swift-difference"),
+            .product(name: "Difference", package: "swift-difference", condition: .when(traits: ["Tagged"])),
             .product(name: "Cardinal", package: "swift-cardinal"),
-            .product(name: "Carrier", package: "swift-carrier"),
-            .product(name: "Tagged", package: "swift-tagged"),
+            .product(name: "Carrier", package: "swift-carrier", condition: .when(traits: ["Tagged"])),
+            .product(name: "Tagged", package: "swift-tagged", condition: .when(traits: ["Tagged"])),
         ], path: "Tests/Ordinal Difference Carrier Migration Tests"),
         .testTarget(name: "Ordinal Tagged Pointer Migration Tests", dependencies: [
             .target(name: "Ordinal"),
-            .product(name: "Difference", package: "swift-difference"),
-            .product(name: "Tagged", package: "swift-tagged"),
+            .product(name: "Difference", package: "swift-difference", condition: .when(traits: ["Tagged"])),
+            .product(name: "Tagged", package: "swift-tagged", condition: .when(traits: ["Tagged"])),
         ], path: "Tests/Ordinal Tagged Pointer Migration Tests"),
     ],
     swiftLanguageModes: [.v6]

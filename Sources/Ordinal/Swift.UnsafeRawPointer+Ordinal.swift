@@ -1,3 +1,4 @@
+#if Tagged
 extension Swift.UnsafeRawPointer {
 
     @inlinable
@@ -16,3 +17,5 @@ extension Swift.UnsafeRawPointer {
         return unsafe self.load(fromByteOffset: distance, as: type)
     }
 }
+
+#endif

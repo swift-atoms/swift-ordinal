@@ -1,3 +1,4 @@
+#if Tagged
 import Ordinal
 import Tagged
 import Testing
@@ -58,3 +59,5 @@ extension Ordinal.`Mutable pointers access elements at typed ordinal positions`.
         }
     }
 }
+
+#endif

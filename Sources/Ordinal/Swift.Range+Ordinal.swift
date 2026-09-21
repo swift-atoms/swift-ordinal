@@ -1,3 +1,4 @@
+#if Tagged
 extension Swift.Range where Bound: Ordinal.`Protocol` {
 
     @inlinable
@@ -19,3 +20,5 @@ extension Swift.Range where Bound: Ordinal.`Protocol` {
         unsafe self.init(uncheckedBounds: (lower: start, upper: start + count))
     }
 }
+
+#endif

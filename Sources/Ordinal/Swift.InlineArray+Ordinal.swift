@@ -1,3 +1,4 @@
+#if Tagged
 extension Swift.InlineArray {
 
     @inlinable
@@ -16,3 +17,5 @@ extension Swift.InlineArray {
         }
     }
 }
+
+#endif

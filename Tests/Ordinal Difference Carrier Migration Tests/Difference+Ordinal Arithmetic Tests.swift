@@ -1,3 +1,4 @@
+#if Tagged
 import Difference
 import Cardinal
 import Ordinal
@@ -194,3 +195,5 @@ extension Difference.CarrierTests.Integration {
         #expect(unsafe advanced.load(as: Int.self) == 20)
     }
 }
+
+#endif

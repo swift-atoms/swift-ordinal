@@ -1,3 +1,4 @@
+#if Tagged
 public import Cardinal
 public import Carrier
 public import Distance
@@ -42,3 +43,5 @@ extension Property where Tag == Distance, Base: Ordinal.`Protocol` {
         return Base.Count(Cardinal(result.value))
     }
 }
+
+#endif

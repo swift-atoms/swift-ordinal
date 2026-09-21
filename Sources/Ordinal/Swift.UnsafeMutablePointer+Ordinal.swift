@@ -1,3 +1,4 @@
+#if Tagged
 public import Cardinal
 public import Property
 public import Tagged
@@ -157,3 +158,5 @@ extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
         unsafe self.deinitialize(count: Int(count.underlying.rawValue))
     }
 }
+
+#endif

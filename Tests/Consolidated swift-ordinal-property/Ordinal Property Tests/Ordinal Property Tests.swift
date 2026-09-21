@@ -1,3 +1,4 @@
+#if Tagged
 import struct Cardinal.Cardinal
 import struct Ordinal.Ordinal
 import Ordinal
@@ -109,3 +110,5 @@ struct `Ordinal Property Tests` {
         #expect(empty.isEmpty)
     }
 }
+
+#endif

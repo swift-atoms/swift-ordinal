@@ -1,3 +1,4 @@
+#if Tagged
 public import Advancement
 public import Magnitude
 public import Cardinal
@@ -131,3 +132,5 @@ where
 {
     lhs = try lhs - rhs
 }
+
+#endif

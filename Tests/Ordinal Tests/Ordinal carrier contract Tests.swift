@@ -1,3 +1,4 @@
+#if Tagged
 import Ordinal
 import Testing
 
@@ -28,3 +29,5 @@ struct `Ordinals conform to the carrier contract` {
         #expect(roundTrip(Ordinal(42 as UInt)).rawValue == 42)
     }
 }
+
+#endif

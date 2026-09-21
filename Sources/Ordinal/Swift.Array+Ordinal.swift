@@ -1,3 +1,4 @@
+#if Tagged
 public import Cardinal
 public import Tagged
 
@@ -27,3 +28,5 @@ extension Swift.Array {
         return self[index]
     }
 }
+
+#endif

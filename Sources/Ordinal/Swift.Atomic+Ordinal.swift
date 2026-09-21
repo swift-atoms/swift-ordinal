@@ -1,3 +1,4 @@
+#if Tagged
 #if SYNCHRONIZATION_AVAILABLE
 public import Cardinal
 #endif
@@ -36,4 +37,6 @@ extension Atomic
             }
         }
     }
+#endif
+
 #endif

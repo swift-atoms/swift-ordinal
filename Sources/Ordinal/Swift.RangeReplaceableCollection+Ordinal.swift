@@ -1,3 +1,4 @@
+#if Tagged
 extension Swift.RangeReplaceableCollection where Self.Index == Int {
 
     @inlinable
@@ -17,3 +18,5 @@ extension Swift.RangeReplaceableCollection where Self.Index == Int {
         return self.remove(at: index)
     }
 }
+
+#endif

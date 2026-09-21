@@ -1,3 +1,4 @@
+#if Tagged
 public import Cardinal
 public import Tagged
 
@@ -17,3 +18,5 @@ extension Tagged where Underlying == Cardinal, Tag: ~Copyable & ~Escapable {
         self = index.map(Cardinal.init)
     }
 }
+
+#endif

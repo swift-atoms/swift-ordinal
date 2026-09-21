@@ -1,3 +1,4 @@
+#if Tagged
 extension Swift.OutputSpan where Element: ~Copyable {
 
     @inlinable
@@ -12,3 +13,5 @@ extension Swift.OutputSpan where Element: ~Copyable {
         swapAt(first, second)
     }
 }
+
+#endif

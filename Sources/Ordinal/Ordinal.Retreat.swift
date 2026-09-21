@@ -1,3 +1,4 @@
+#if Tagged
 public import Cardinal
 public import Property
 public import Retreat
@@ -60,3 +61,5 @@ extension Property where Tag == Retreat, Base: Ordinal.`Protocol` {
         return Base(Ordinal(result.value))
     }
 }
+
+#endif

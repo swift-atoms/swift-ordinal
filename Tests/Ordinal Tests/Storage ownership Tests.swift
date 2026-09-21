@@ -1,3 +1,4 @@
+#if Tagged
 import Cardinal
 import Ordinal
 import Tagged
@@ -104,3 +105,5 @@ private final class Object {
         #expect(deaths.ids.sorted() == [1, 2])
     }
 }
+
+#endif

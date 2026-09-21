@@ -1,3 +1,4 @@
+#if Tagged
 import Ordinal
 import Tagged
 import Testing
@@ -46,3 +47,5 @@ extension Ordinal.`Contiguous arrays access elements at typed ordinal positions`
         #expect(arr[1] == 77)
     }
 }
+
+#endif

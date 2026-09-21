@@ -1,3 +1,4 @@
+#if Tagged
 public import Tagged
 
 extension Swift.Int {
@@ -45,3 +46,5 @@ extension Swift.Int {
         self = Int(bitPattern: position.underlying)
     }
 }
+
+#endif

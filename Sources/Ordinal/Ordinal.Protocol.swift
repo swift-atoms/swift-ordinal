@@ -1,3 +1,4 @@
+#if Tagged
 public import Advancement
 public import Cardinal
 public import Carrier
@@ -75,3 +76,5 @@ extension Ordinal.`Protocol` {
         lhs = lhs + rhs
     }
 }
+
+#endif

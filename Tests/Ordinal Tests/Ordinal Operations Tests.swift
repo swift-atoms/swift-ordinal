@@ -1,3 +1,4 @@
+#if Tagged
 import Cardinal
 import Ordinal
 import Tagged
@@ -52,3 +53,5 @@ struct `Generic ordinal operations preserve their carrier and count domain` {
         #expect(distance.cardinal == Cardinal(2))
     }
 }
+
+#endif

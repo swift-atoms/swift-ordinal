@@ -1,3 +1,4 @@
+#if Tagged
 public import Difference
 public import Tagged
 
@@ -62,3 +63,5 @@ extension Swift.UnsafePointer where Pointee: ~Copyable {
         }
     }
 }
+
+#endif

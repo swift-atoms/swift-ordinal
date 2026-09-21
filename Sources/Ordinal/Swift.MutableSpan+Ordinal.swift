@@ -1,3 +1,4 @@
+#if Tagged
 public import Cardinal
 public import Tagged
 
@@ -19,3 +20,5 @@ extension Swift.MutableSpan where Element: ~Copyable {
         unsafe (self = _overrideLifetime(span, borrowing: ()))
     }
 }
+
+#endif

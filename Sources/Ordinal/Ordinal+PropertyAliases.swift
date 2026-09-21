@@ -1,3 +1,4 @@
+#if Tagged
 public import Advancement
 public import Distance
 public import Predecessor
@@ -11,3 +12,5 @@ extension Ordinal {
     public typealias Retreat = Retreat::Retreat
     public typealias Successor = Successor::Successor
 }
+
+#endif

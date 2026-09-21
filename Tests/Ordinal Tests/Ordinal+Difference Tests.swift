@@ -1,3 +1,4 @@
+#if Tagged
 import Cardinal
 import Difference
 import Ordinal
@@ -101,3 +102,5 @@ extension Ordinal.`Ordinals preserve unsigned positions through checked and satu
         #expect(offset == Coordinate.Offset(7))
     }
 }
+
+#endif
