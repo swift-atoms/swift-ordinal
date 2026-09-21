@@ -120,6 +120,18 @@ let package = Package(
             ],
             path: "Tests/Consolidated swift-ordinal-property"
         ),
+        .testTarget(name: "Ordinal Difference Carrier Migration Tests", dependencies: [
+            .target(name: "Ordinal"),
+            .product(name: "Difference", package: "swift-difference"),
+            .product(name: "Cardinal", package: "swift-cardinal"),
+            .product(name: "Carrier", package: "swift-carrier"),
+            .product(name: "Tagged", package: "swift-tagged"),
+        ], path: "Tests/Ordinal Difference Carrier Migration Tests"),
+        .testTarget(name: "Ordinal Tagged Pointer Migration Tests", dependencies: [
+            .target(name: "Ordinal"),
+            .product(name: "Difference", package: "swift-difference"),
+            .product(name: "Tagged", package: "swift-tagged"),
+        ], path: "Tests/Ordinal Tagged Pointer Migration Tests"),
     ],
     swiftLanguageModes: [.v6]
 )
