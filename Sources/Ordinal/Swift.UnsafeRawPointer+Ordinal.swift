@@ -1,4 +1,3 @@
-#if Tagged
 extension Swift.UnsafeRawPointer {
 
     @inlinable
@@ -18,4 +17,3 @@ extension Swift.UnsafeRawPointer {
     }
 }
 
-#endif

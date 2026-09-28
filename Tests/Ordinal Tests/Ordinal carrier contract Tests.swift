@@ -1,4 +1,3 @@
-#if Tagged
 import Ordinal
 import Testing
 
@@ -30,4 +29,3 @@ struct `Ordinals conform to the carrier contract` {
     }
 }
 
-#endif

@@ -1,4 +1,3 @@
-#if Tagged
 public import Advancement
 public import Cardinal
 public import Carrier
@@ -116,4 +115,3 @@ public func % <O: Ordinal.`Protocol`, C: Carrier.`Protocol`<Cardinal>>(
     O(Ordinal(lhs.ordinal.rawValue % rhs.cardinal.rawValue))
 }
 
-#endif

@@ -1,4 +1,3 @@
-#if Tagged
 public import Cardinal
 public import Property
 public import Tagged
@@ -31,4 +30,3 @@ extension Property::Property {
     }
 }
 
-#endif

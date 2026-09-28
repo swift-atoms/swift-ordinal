@@ -1,4 +1,3 @@
-#if Tagged
 public import Cardinal
 public import Tagged
 
@@ -29,4 +28,3 @@ extension Swift.UnsafeBufferPointer {
     }
 }
 
-#endif

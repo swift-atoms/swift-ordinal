@@ -1,4 +1,3 @@
-#if Tagged
 import Difference
 import Ordinal
 import Tagged
@@ -160,4 +159,3 @@ extension Difference.`Standard Library Integration`.`Edge Case` {
     }
 }
 
-#endif

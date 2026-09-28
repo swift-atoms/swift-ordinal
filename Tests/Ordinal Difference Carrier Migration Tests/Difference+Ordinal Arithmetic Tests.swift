@@ -1,4 +1,3 @@
-#if Tagged
 import Difference
 import Cardinal
 import Ordinal
@@ -196,4 +195,3 @@ extension Difference.CarrierTests.Integration {
     }
 }
 
-#endif

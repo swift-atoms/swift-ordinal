@@ -1,4 +1,3 @@
-#if Tagged
 public import Tagged
 
 extension Swift.Int {
@@ -47,4 +46,3 @@ extension Swift.Int {
     }
 }
 
-#endif

@@ -1,4 +1,3 @@
-#if Tagged
 import Cardinal
 import Ordinal
 import Tagged
@@ -154,4 +153,3 @@ private enum ElementFailure: Swift.Error { case element }
     }
 }
 
-#endif

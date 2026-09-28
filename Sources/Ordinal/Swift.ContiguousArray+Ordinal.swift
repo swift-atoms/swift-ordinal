@@ -1,4 +1,3 @@
-#if Tagged
 extension Swift.ContiguousArray {
 
     @inlinable
@@ -18,4 +17,3 @@ extension Swift.ContiguousArray {
     }
 }
 
-#endif

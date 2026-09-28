@@ -1,4 +1,3 @@
-#if Tagged
 public import Cardinal
 public import Property
 public import Tagged
@@ -159,4 +158,3 @@ extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
     }
 }
 
-#endif

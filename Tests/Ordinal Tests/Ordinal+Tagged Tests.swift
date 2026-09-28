@@ -1,4 +1,3 @@
-#if Tagged
 import Cardinal
 import Ordinal
 import Tagged
@@ -208,4 +207,3 @@ extension Ordinal.`Tagged ordinals retain their position domain through arithmet
     }
 }
 
-#endif

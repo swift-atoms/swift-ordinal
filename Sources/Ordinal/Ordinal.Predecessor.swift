@@ -1,4 +1,3 @@
-#if Tagged
 public import Predecessor
 public import Property
 
@@ -26,4 +25,3 @@ extension Property where Tag == Predecessor, Base: Ordinal.`Protocol` {
     }
 }
 
-#endif

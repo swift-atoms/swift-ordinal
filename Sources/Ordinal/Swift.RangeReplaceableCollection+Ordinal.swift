@@ -1,4 +1,3 @@
-#if Tagged
 extension Swift.RangeReplaceableCollection where Self.Index == Int {
 
     @inlinable
@@ -19,4 +18,3 @@ extension Swift.RangeReplaceableCollection where Self.Index == Int {
     }
 }
 
-#endif

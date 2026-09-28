@@ -1,4 +1,3 @@
-#if Tagged
 import Cardinal
 import Ordinal
 import Tagged
@@ -108,4 +107,3 @@ struct `Storage adapters reject unrepresentable values before use` {
     }
 }
 
-#endif

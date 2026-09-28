@@ -1,4 +1,3 @@
-#if Tagged
 extension Swift.MutableCollection where Self.Index == Int {
 
     @inlinable
@@ -10,4 +9,3 @@ extension Swift.MutableCollection where Self.Index == Int {
     }
 }
 
-#endif

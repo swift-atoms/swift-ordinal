@@ -1,4 +1,3 @@
-#if Tagged
 public import Cardinal
 public import Tagged
 
@@ -21,4 +20,3 @@ extension Swift.Span where Element: ~Copyable {
     }
 }
 
-#endif

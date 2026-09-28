@@ -1,4 +1,3 @@
-#if Tagged
 import Difference
 import Ordinal
 import Tagged
@@ -54,4 +53,3 @@ extension Ordinal.`Immutable pointers access elements at typed ordinal positions
     }
 }
 
-#endif

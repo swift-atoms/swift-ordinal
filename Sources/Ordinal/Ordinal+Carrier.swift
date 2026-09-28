@@ -1,4 +1,3 @@
-#if Tagged
 public import Carrier
 
 extension Ordinal: Carrier.`Protocol` {
@@ -7,4 +6,3 @@ extension Ordinal: Carrier.`Protocol` {
 
 }
 
-#endif

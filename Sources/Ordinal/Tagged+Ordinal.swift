@@ -1,4 +1,3 @@
-#if Tagged
 public import Cardinal
 public import Tagged
 
@@ -19,4 +18,3 @@ extension Tagged where Underlying == Cardinal, Tag: ~Copyable & ~Escapable {
     }
 }
 
-#endif

@@ -1,4 +1,3 @@
-#if Tagged
 #if SYNCHRONIZATION_AVAILABLE
 public import Cardinal
 #endif
@@ -10,7 +9,6 @@ public import Carrier
 #if SYNCHRONIZATION_AVAILABLE
 public import Synchronization
 #endif
-
 
 #if SYNCHRONIZATION_AVAILABLE
 extension Atomic
@@ -39,4 +37,3 @@ extension Atomic
     }
 #endif
 
-#endif

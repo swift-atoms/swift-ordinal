@@ -1,4 +1,3 @@
-#if Tagged
 extension Swift.UInt32 {
 
     @inlinable
@@ -7,4 +6,3 @@ extension Swift.UInt32 {
     }
 }
 
-#endif
