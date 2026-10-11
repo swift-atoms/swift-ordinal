@@ -6,23 +6,25 @@ public import Tagged
 
 extension Ordinal {
 
-    public protocol `Protocol` {
-
-        associatedtype Domain: ~Copyable & ~Escapable
-
-        associatedtype Count: Carrier.`Protocol`<Cardinal>
-        where Count.Domain == Domain
-
-        associatedtype Offset: Carrier.`Protocol`<Difference> = Tagged<Domain, Difference>
-        where Offset.Domain == Domain
-
-        var ordinal: Ordinal { get }
-
-        init(_ ordinal: Ordinal)
-    }
+    public typealias `Protocol` = _OrdinalProtocol
 }
 
-extension Ordinal: Ordinal.`Protocol` {
+public protocol _OrdinalProtocol {
+
+    associatedtype Domain: ~Copyable & ~Escapable
+
+    associatedtype Count: Carrier.`Protocol`<Cardinal>
+    where Count.Domain == Domain
+
+    associatedtype Offset: Carrier.`Protocol`<Difference> = Tagged<Domain, Difference>
+    where Offset.Domain == Domain
+
+    var ordinal: Ordinal { get }
+
+    init(_ ordinal: Ordinal)
+}
+
+extension Ordinal: _OrdinalProtocol {
 
     public typealias Domain = Never
 
