@@ -17,4 +17,3 @@ extension Swift.RangeReplaceableCollection where Self.Index == Int {
         return self.remove(at: index)
     }
 }
-

@@ -1,7 +1,6 @@
 #if SYNCHRONIZATION_AVAILABLE
-public import Synchronization
+    public import Synchronization
 #endif
-
 
 extension Ordinal {
 
@@ -12,7 +11,7 @@ extension Ordinal {
 }
 
 #if SYNCHRONIZATION_AVAILABLE
-extension Ordinal: AtomicRepresentable {
+    extension Ordinal: AtomicRepresentable {
 
         public typealias AtomicRepresentation = UInt.AtomicRepresentation
 

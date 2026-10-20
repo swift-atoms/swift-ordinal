@@ -60,4 +60,3 @@ extension Property where Tag == Retreat, Base: Ordinal.`Protocol` {
         return Base(Ordinal(result.value))
     }
 }
-

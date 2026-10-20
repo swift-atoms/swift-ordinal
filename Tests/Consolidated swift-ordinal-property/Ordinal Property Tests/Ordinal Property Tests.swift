@@ -1,10 +1,11 @@
-import struct Cardinal.Cardinal
-import struct Ordinal.Ordinal
-import Ordinal
 import Cardinal
 import Carrier
+import Ordinal
 import Property
 import Testing
+
+import struct Cardinal.Cardinal
+import struct Ordinal.Ordinal
 
 private struct Position: Ordinal.`Protocol`, Comparable {
     typealias Domain = Never
@@ -109,4 +110,3 @@ struct `Ordinal Property Tests` {
         #expect(empty.isEmpty)
     }
 }
-

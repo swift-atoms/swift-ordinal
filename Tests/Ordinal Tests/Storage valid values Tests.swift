@@ -152,4 +152,3 @@ private enum ElementFailure: Swift.Error { case element }
         #expect(bytes == [10, 21])
     }
 }
-

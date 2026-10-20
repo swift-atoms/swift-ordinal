@@ -24,4 +24,3 @@ extension Property where Tag == Predecessor, Base: Ordinal.`Protocol` {
         }
     }
 }
-

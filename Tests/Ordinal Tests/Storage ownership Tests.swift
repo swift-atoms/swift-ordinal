@@ -104,4 +104,3 @@ private final class Object {
         #expect(deaths.ids.sorted() == [1, 2])
     }
 }
-

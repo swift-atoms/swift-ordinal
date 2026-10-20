@@ -206,4 +206,3 @@ extension Ordinal.`Tagged ordinals retain their position domain through arithmet
         #expect(bits == -1)
     }
 }
-

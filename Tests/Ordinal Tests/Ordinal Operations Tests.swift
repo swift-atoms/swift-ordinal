@@ -52,4 +52,3 @@ struct `Generic ordinal operations preserve their carrier and count domain` {
         #expect(distance.cardinal == Cardinal(2))
     }
 }
-

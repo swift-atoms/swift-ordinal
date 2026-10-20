@@ -144,7 +144,8 @@ private struct SignedIndices: MutableCollection, RangeReplaceableCollection {
         set { values[i + 1] = newValue }
     }
     mutating func replaceSubrange<C: Collection>(
-        _ subrange: Range<Int>, with newElements: C
+        _ subrange: Range<Int>,
+        with newElements: C
     ) where C.Element == Int {
         values.replaceSubrange(
             (subrange.lowerBound + 1)..<(subrange.upperBound + 1),
@@ -152,4 +153,3 @@ private struct SignedIndices: MutableCollection, RangeReplaceableCollection {
         )
     }
 }
-

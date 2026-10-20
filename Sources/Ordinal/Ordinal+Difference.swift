@@ -1,9 +1,9 @@
 public import Advancement
-public import Magnitude
 public import Cardinal
 public import Carrier
 public import Difference
 public import Distance
+public import Magnitude
 public import Retreat
 public import Tagged
 
@@ -33,7 +33,8 @@ extension Tagged where Underlying == Difference, Tag: ~Copyable & ~Escapable {
 public func + <O, D>(lhs: O, rhs: D) throws(Ordinal.Error) -> O
 where
     O: Ordinal.`Protocol`,
-    D: Carrier.`Protocol`, D.Underlying == Difference,
+    D: Carrier.`Protocol`,
+    D.Underlying == Difference,
     O.Domain == D.Domain
 {
     if rhs.difference < .zero {
@@ -70,7 +71,8 @@ where
 @inlinable
 public func + <D, O>(lhs: D, rhs: O) throws(Ordinal.Error) -> O
 where
-    D: Carrier.`Protocol`, D.Underlying == Difference,
+    D: Carrier.`Protocol`,
+    D.Underlying == Difference,
     O: Ordinal.`Protocol`,
     D.Domain == O.Domain
 {
@@ -81,7 +83,8 @@ where
 public func - <O, D>(lhs: O, rhs: D) throws(Ordinal.Error) -> O
 where
     O: Ordinal.`Protocol`,
-    D: Carrier.`Protocol`, D.Underlying == Difference,
+    D: Carrier.`Protocol`,
+    D.Underlying == Difference,
     O.Domain == D.Domain
 {
     try lhs + (-rhs)
@@ -116,7 +119,8 @@ where
 public func += <O, D>(lhs: inout O, rhs: D) throws(Ordinal.Error)
 where
     O: Ordinal.`Protocol`,
-    D: Carrier.`Protocol`, D.Underlying == Difference,
+    D: Carrier.`Protocol`,
+    D.Underlying == Difference,
     O.Domain == D.Domain
 {
     lhs = try lhs + rhs
@@ -126,9 +130,9 @@ where
 public func -= <O, D>(lhs: inout O, rhs: D) throws(Ordinal.Error)
 where
     O: Ordinal.`Protocol`,
-    D: Carrier.`Protocol`, D.Underlying == Difference,
+    D: Carrier.`Protocol`,
+    D.Underlying == Difference,
     O.Domain == D.Domain
 {
     lhs = try lhs - rhs
 }
-

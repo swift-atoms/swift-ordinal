@@ -11,4 +11,3 @@ extension Ordinal {
     public typealias Retreat = Retreat::Retreat
     public typealias Successor = Successor::Successor
 }
-

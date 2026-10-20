@@ -1,10 +1,11 @@
-import Difference
 import Cardinal
-import Ordinal
 import Carrier
+import Difference
+import Ordinal
 import Tagged
-import struct Tagged.Tagged
 import Testing
+
+import struct Tagged.Tagged
 
 private enum Element {}
 
@@ -194,4 +195,3 @@ extension Difference.CarrierTests.Integration {
         #expect(unsafe advanced.load(as: Int.self) == 20)
     }
 }
-

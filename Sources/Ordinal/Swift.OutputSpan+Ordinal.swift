@@ -12,4 +12,3 @@ extension Swift.OutputSpan where Element: ~Copyable {
         swapAt(first, second)
     }
 }
-

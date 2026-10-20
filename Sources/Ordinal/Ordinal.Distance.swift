@@ -42,4 +42,3 @@ extension Property where Tag == Distance, Base: Ordinal.`Protocol` {
         return Base.Count(Cardinal(result.value))
     }
 }
-

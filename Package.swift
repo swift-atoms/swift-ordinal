@@ -18,7 +18,6 @@ let package = Package(
     ],
     dependencies: [
 
-
         .package(
             url: "https://github.com/swift-atoms/swift-magnitude.git",
             branch: "main"
@@ -82,18 +81,18 @@ let package = Package(
             ],
             path: "Sources/Ordinal"
         ),
-        
+
         .target(
             name: "Ordinal Foundation Integration",
             dependencies: [
-                .target(name: "Ordinal"),
+                .target(name: "Ordinal")
             ],
             path: "Sources/Ordinal Foundation Integration"
         ),
         .target(
             name: "Ordinal Test Support",
             dependencies: [
-                .target(name: "Ordinal"),
+                .target(name: "Ordinal")
             ],
             path: "Tests/Support"
         ),
@@ -120,32 +119,41 @@ let package = Package(
             ],
             path: "Tests/Consolidated swift-ordinal-property"
         ),
-        .testTarget(name: "Ordinal Difference Carrier Migration Tests", dependencies: [
-            .target(name: "Ordinal"),
-            .product(name: "Difference", package: "swift-difference"),
-            .product(name: "Cardinal", package: "swift-cardinal"),
-            .product(name: "Carrier", package: "swift-carrier"),
-            .product(name: "Tagged", package: "swift-tagged"),
-        ], path: "Tests/Ordinal Difference Carrier Migration Tests"),
-        .testTarget(name: "Ordinal Tagged Pointer Migration Tests", dependencies: [
-            .target(name: "Ordinal"),
-            .product(name: "Difference", package: "swift-difference"),
-            .product(name: "Tagged", package: "swift-tagged"),
-        ], path: "Tests/Ordinal Tagged Pointer Migration Tests"),
+        .testTarget(
+            name: "Ordinal Difference Carrier Migration Tests",
+            dependencies: [
+                .target(name: "Ordinal"),
+                .product(name: "Difference", package: "swift-difference"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Carrier", package: "swift-carrier"),
+                .product(name: "Tagged", package: "swift-tagged"),
+            ],
+            path: "Tests/Ordinal Difference Carrier Migration Tests"
+        ),
+        .testTarget(
+            name: "Ordinal Tagged Pointer Migration Tests",
+            dependencies: [
+                .target(name: "Ordinal"),
+                .product(name: "Difference", package: "swift-difference"),
+                .product(name: "Tagged", package: "swift-tagged"),
+            ],
+            path: "Tests/Ordinal Tagged Pointer Migration Tests"
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
 
 for target in package.targets where ![.system, .binary, .plugin].contains(target.type) {
-    target.swiftSettings = (target.swiftSettings ?? []) + [
-        .strictMemorySafety(),
-        .enableUpcomingFeature("ExistentialAny"),
-        .enableUpcomingFeature("InternalImportsByDefault"),
-        .enableUpcomingFeature("MemberImportVisibility"),
-        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
-        .enableUpcomingFeature("InferIsolatedConformances"),
-        .enableExperimentalFeature("Lifetimes"),
-        .define("SYNCHRONIZATION_AVAILABLE", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS, .linux, .windows])),
-        .treatAllWarnings(as: .error),
-    ]
+    target.swiftSettings =
+        (target.swiftSettings ?? []) + [
+            .strictMemorySafety(),
+            .enableUpcomingFeature("ExistentialAny"),
+            .enableUpcomingFeature("InternalImportsByDefault"),
+            .enableUpcomingFeature("MemberImportVisibility"),
+            .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+            .enableUpcomingFeature("InferIsolatedConformances"),
+            .enableExperimentalFeature("Lifetimes"),
+            .define("SYNCHRONIZATION_AVAILABLE", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS, .linux, .windows])),
+            .treatAllWarnings(as: .error),
+        ]
 }

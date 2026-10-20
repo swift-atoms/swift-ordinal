@@ -1,4 +1,5 @@
 public import Cardinal
+public import Difference
 public import Property
 public import Tagged
 
@@ -14,8 +15,6 @@ extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
         unsafe Property::Property(self)
     }
 }
-
-public import Difference
 
 extension Swift.UnsafeMutablePointer {
 
@@ -157,4 +156,3 @@ extension Swift.UnsafeMutablePointer where Pointee: ~Copyable {
         unsafe self.deinitialize(count: Int(count.underlying.rawValue))
     }
 }
-

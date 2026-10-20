@@ -62,4 +62,3 @@ extension Swift.UnsafePointer where Pointee: ~Copyable {
         }
     }
 }
-

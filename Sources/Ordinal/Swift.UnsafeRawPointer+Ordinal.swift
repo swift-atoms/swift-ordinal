@@ -16,4 +16,3 @@ extension Swift.UnsafeRawPointer {
         return unsafe self.load(fromByteOffset: distance, as: type)
     }
 }
-

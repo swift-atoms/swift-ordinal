@@ -27,4 +27,3 @@ extension Swift.UnsafeBufferPointer {
         return unsafe self[position]
     }
 }
-

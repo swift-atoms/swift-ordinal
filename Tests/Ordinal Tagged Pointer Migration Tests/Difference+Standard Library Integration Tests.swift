@@ -1,7 +1,6 @@
 import Difference
 import Ordinal
 import Tagged
-import Tagged
 import Testing
 
 private let isLinux: Bool = {
@@ -158,4 +157,3 @@ extension Difference.`Standard Library Integration`.`Edge Case` {
         #expect(deinitCount == 1)
     }
 }
-

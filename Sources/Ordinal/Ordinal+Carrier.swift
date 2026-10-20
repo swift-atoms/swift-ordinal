@@ -5,4 +5,3 @@ extension Ordinal: Carrier.`Protocol` {
     public typealias Underlying = Ordinal
 
 }
-

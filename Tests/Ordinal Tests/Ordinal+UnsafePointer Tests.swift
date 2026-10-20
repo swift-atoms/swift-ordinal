@@ -52,4 +52,3 @@ extension Ordinal.`Immutable pointers access elements at typed ordinal positions
         }
     }
 }
-

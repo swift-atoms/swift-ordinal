@@ -77,4 +77,3 @@ extension Ordinal.`Protocol` {
         lhs = lhs + rhs
     }
 }
-

@@ -55,4 +55,3 @@ extension Property where Tag == Advancement, Base: Ordinal.`Protocol` {
         return Base(Ordinal(result.value))
     }
 }
-

@@ -28,4 +28,3 @@ extension Swift.UnsafeMutableRawPointer {
         unsafe self.storeBytes(of: value, toByteOffset: distance, as: type)
     }
 }
-

@@ -114,4 +114,3 @@ public func % <O: Ordinal.`Protocol`, C: Carrier.`Protocol`<Cardinal>>(
 ) -> O where O.Domain == C.Domain {
     O(Ordinal(lhs.ordinal.rawValue % rhs.cardinal.rawValue))
 }
-

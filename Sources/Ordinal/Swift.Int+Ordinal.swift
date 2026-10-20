@@ -35,8 +35,7 @@ extension Swift.Int {
     }
 
     @inlinable
-    public init<Tag: ~Copyable & ~Escapable>(_ position: Tagged<Tag, Ordinal>) throws(Ordinal.Error)
-    {
+    public init<Tag: ~Copyable & ~Escapable>(_ position: Tagged<Tag, Ordinal>) throws(Ordinal.Error) {
         self = try Int(position.underlying)
     }
 
@@ -45,4 +44,3 @@ extension Swift.Int {
         self = Int(bitPattern: position.underlying)
     }
 }
-

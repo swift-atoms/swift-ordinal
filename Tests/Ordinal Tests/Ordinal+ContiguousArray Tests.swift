@@ -46,4 +46,3 @@ extension Ordinal.`Contiguous arrays access elements at typed ordinal positions`
         #expect(arr[1] == 77)
     }
 }
-

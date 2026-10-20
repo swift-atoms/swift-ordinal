@@ -1,7 +1,6 @@
 #if SYNCHRONIZATION_AVAILABLE
-import Synchronization
+    import Synchronization
 #endif
-
 
 extension Ordinal: Swift.ExpressibleByIntegerLiteral {
 

@@ -47,10 +47,10 @@ struct `Storage adapters reject unrepresentable values before use` {
             }
         }
         #if DEBUG
-        let diagnostic = String(decoding: result.standardErrorContent, as: UTF8.self)
-        #expect(diagnostic.contains("not representable as Int"), "\(diagnostic)")
+            let diagnostic = String(decoding: result.standardErrorContent, as: UTF8.self)
+            #expect(diagnostic.contains("not representable as Int"), "\(diagnostic)")
         #else
-        _ = result
+            _ = result
         #endif
     }
 
@@ -99,11 +99,10 @@ struct `Storage adapters reject unrepresentable values before use` {
             }
         }
         #if DEBUG
-        let diagnostic = String(decoding: result.standardErrorContent, as: UTF8.self)
-        #expect(diagnostic.contains("not representable as Int"), "\(diagnostic)")
+            let diagnostic = String(decoding: result.standardErrorContent, as: UTF8.self)
+            #expect(diagnostic.contains("not representable as Int"), "\(diagnostic)")
         #else
-        _ = result
+            _ = result
         #endif
     }
 }
-

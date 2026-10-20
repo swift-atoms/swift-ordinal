@@ -58,4 +58,3 @@ extension Ordinal.`Mutable pointers access elements at typed ordinal positions`.
         }
     }
 }
-

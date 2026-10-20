@@ -27,4 +27,3 @@ extension Swift.Array {
         return self[index]
     }
 }
-

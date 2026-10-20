@@ -19,4 +19,3 @@ extension Swift.Span where Element: ~Copyable {
         unsafe (self = _overrideLifetime(span, borrowing: ()))
     }
 }
-

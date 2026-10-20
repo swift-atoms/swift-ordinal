@@ -1,5 +1,5 @@
-public import Successor
 public import Property
+public import Successor
 
 extension Ordinal.`Protocol` {
     @inlinable
@@ -24,4 +24,3 @@ extension Property where Tag == Successor, Base: Ordinal.`Protocol` {
         }
     }
 }
-

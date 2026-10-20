@@ -8,4 +8,3 @@ extension Swift.MutableCollection where Self.Index == Int {
         self.swapAt(first, second)
     }
 }
-

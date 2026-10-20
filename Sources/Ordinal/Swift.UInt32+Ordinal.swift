@@ -5,4 +5,3 @@ extension Swift.UInt32 {
         self = UInt32(position.ordinal.rawValue)
     }
 }
-
