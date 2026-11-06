@@ -2,7 +2,7 @@ import Ordinal
 import Tagged
 import Testing
 
-extension Ordinal {
+extension `Ordinal Tests` {
     @Suite
     struct `Contiguous arrays access elements at typed ordinal positions` {
         @Suite struct `Contiguous arrays preserve element access through bare and tagged ordinals` {}
@@ -12,7 +12,7 @@ extension Ordinal {
     }
 }
 
-extension Ordinal.`Contiguous arrays access elements at typed ordinal positions`.`Contiguous arrays preserve element access through bare and tagged ordinals` {
+extension `Ordinal Tests`.`Contiguous arrays access elements at typed ordinal positions`.`Contiguous arrays preserve element access through bare and tagged ordinals` {
 
     @Test
     func `A contiguous array reads the element at a bare ordinal position`() {

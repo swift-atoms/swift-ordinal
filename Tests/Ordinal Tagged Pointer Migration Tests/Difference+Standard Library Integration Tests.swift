@@ -19,7 +19,9 @@ private final class DeinitProbe {
     deinit { onDeinit() }
 }
 
-extension Difference {
+enum `Difference Tests` {}
+
+extension `Difference Tests` {
     @Suite
     struct `Standard Library Integration` {
         @Suite struct Unit {}
@@ -29,7 +31,7 @@ extension Difference {
     }
 }
 
-extension Difference.`Standard Library Integration`.Integration {
+extension `Difference Tests`.`Standard Library Integration`.Integration {
 
     @Test
     func `exact Int conversion from tagged offset positive`() {
@@ -130,7 +132,7 @@ extension Difference.`Standard Library Integration`.Integration {
     }
 }
 
-extension Difference.`Standard Library Integration`.`Edge Case` {
+extension `Difference Tests`.`Standard Library Integration`.`Edge Case` {
 
     @Test
     func `swap with equal typed indices leaves trivial pointee unchanged`() {

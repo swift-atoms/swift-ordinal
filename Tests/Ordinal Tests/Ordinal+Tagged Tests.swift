@@ -8,7 +8,7 @@ import Testing
 private enum SlotPosition {}
 private enum LanePosition {}
 
-extension Ordinal {
+extension `Ordinal Tests` {
     @Suite
     struct `Tagged ordinals retain their position domain through arithmetic and conversion` {
         @Suite struct `Tagged ordinal operations preserve positions counts and ranges` {}
@@ -18,7 +18,7 @@ extension Ordinal {
     }
 }
 
-extension Ordinal.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal operations preserve positions counts and ranges` {
+extension `Ordinal Tests`.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal operations preserve positions counts and ranges` {
 
     @Test
     func `Tagged ordinal construction preserves its underlying position`() {
@@ -148,7 +148,7 @@ extension Ordinal.`Tagged ordinals retain their position domain through arithmet
     }
 }
 
-extension Ordinal.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal arithmetic reports boundary failures` {
+extension `Ordinal Tests`.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal arithmetic reports boundary failures` {
 
     @Test
     func `successor exact throws at max`() {
@@ -184,7 +184,7 @@ extension Ordinal.`Tagged ordinals retain their position domain through arithmet
     }
 }
 
-extension Ordinal.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal conversions preserve exact values and explicit bit patterns` {
+extension `Ordinal Tests`.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal conversions preserve exact values and explicit bit patterns` {
 
     @Test
     func `Failable tagged ordinal conversion returns the exact Int value`() {

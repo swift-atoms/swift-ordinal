@@ -21,7 +21,7 @@ private func inferredOffset<O: Ordinal.`Protocol`>(_ lhs: O, _ rhs: O) -> O.Offs
     lhs - rhs
 }
 
-extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal construction arithmetic and conversions preserve positions and distances` {
+extension `Ordinal Tests`.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal construction arithmetic and conversions preserve positions and distances` {
 
     @Test
     func `difference translates ordinal in both directions`() throws(Ordinal.Error) {
@@ -56,7 +56,7 @@ extension Ordinal.`Ordinals preserve unsigned positions through checked and satu
     }
 }
 
-extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal boundaries distinguish saturation from typed arithmetic failures` {
+extension `Ordinal Tests`.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal boundaries distinguish saturation from typed arithmetic failures` {
 
     @Test
     func `difference translation reports ordinal bounds`() {
@@ -69,7 +69,7 @@ extension Ordinal.`Ordinals preserve unsigned positions through checked and satu
     }
 }
 
-extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal displacement adapters preserve carrier wrappers and tagged domains` {
+extension `Ordinal Tests`.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal displacement adapters preserve carrier wrappers and tagged domains` {
 
     @Test
     func `custom ordinal carrier preserves its wrapper and domain`() throws(Ordinal.Error) {

@@ -2,7 +2,7 @@ import Ordinal
 import Tagged
 import Testing
 
-extension Ordinal {
+extension `Ordinal Tests` {
     @Suite
     struct `Mutable pointers access elements at typed ordinal positions` {
         @Suite struct `Mutable pointers preserve element access through bare and tagged ordinals` {}
@@ -12,7 +12,7 @@ extension Ordinal {
     }
 }
 
-extension Ordinal.`Mutable pointers access elements at typed ordinal positions`.`Mutable pointers preserve element access through bare and tagged ordinals` {
+extension `Ordinal Tests`.`Mutable pointers access elements at typed ordinal positions`.`Mutable pointers preserve element access through bare and tagged ordinals` {
 
     @Test
     func `A mutable pointer reads the element at a bare ordinal position`() {

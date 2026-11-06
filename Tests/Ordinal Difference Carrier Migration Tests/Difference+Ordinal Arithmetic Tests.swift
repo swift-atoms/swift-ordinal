@@ -25,7 +25,9 @@ private func count(_ value: UInt) -> Count {
     Count(Cardinal(value))
 }
 
-extension Difference {
+enum `Difference Tests` {}
+
+extension `Difference Tests` {
     @Suite
     struct CarrierTests {
         @Suite struct Unit {}
@@ -34,7 +36,7 @@ extension Difference {
     }
 }
 
-extension Difference.CarrierTests.Unit {
+extension `Difference Tests`.CarrierTests.Unit {
 
     @Test
     func `vector exposes its carrier value`() {
@@ -108,7 +110,7 @@ extension Difference.CarrierTests.Unit {
     }
 }
 
-extension Difference.CarrierTests.`Edge Case` {
+extension `Difference Tests`.CarrierTests.`Edge Case` {
 
     @Test
     func `negative advance underflows`() {
@@ -153,7 +155,7 @@ extension Difference.CarrierTests.`Edge Case` {
     }
 }
 
-extension Difference.CarrierTests.Integration {
+extension `Difference Tests`.CarrierTests.Integration {
 
     @Test
     func `collection indexing accepts vector carriers`() {

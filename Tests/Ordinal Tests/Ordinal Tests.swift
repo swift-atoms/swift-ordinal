@@ -3,7 +3,9 @@ import Testing
 
 @testable import Ordinal
 
-extension Ordinal {
+enum `Ordinal Tests` {}
+
+extension `Ordinal Tests` {
     @Suite
     struct `Ordinals preserve unsigned positions through checked and saturating arithmetic` {
         @Suite struct `Ordinal construction arithmetic and conversions preserve positions and distances` {}
@@ -13,7 +15,7 @@ extension Ordinal {
     }
 }
 
-extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal construction arithmetic and conversions preserve positions and distances` {
+extension `Ordinal Tests`.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal construction arithmetic and conversions preserve positions and distances` {
 
     @Test
     func `Integer literals preserve ordinal positions`() {
@@ -121,7 +123,7 @@ extension Ordinal.`Ordinals preserve unsigned positions through checked and satu
     }
 }
 
-extension Ordinal.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal boundaries distinguish saturation from typed arithmetic failures` {
+extension `Ordinal Tests`.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal boundaries distinguish saturation from typed arithmetic failures` {
 
     @Test
     func `construction from int fails for negative`() {

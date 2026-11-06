@@ -1,12 +1,12 @@
 import Ordinal
 import Testing
 
-extension Ordinal {
+extension `Ordinal Tests` {
     @Suite
     struct `Representable ordinal positions convert exactly to Int` {}
 }
 
-extension Ordinal.`Representable ordinal positions convert exactly to Int` {
+extension `Ordinal Tests`.`Representable ordinal positions convert exactly to Int` {
 
     @Test
     func `Throwing ordinal conversion preserves a representable Int value`() throws(Ordinal.Error) {
