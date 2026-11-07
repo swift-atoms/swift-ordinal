@@ -6,11 +6,17 @@ import Testing
 extension `Ordinal Tests` {
     @Suite
     struct `Immutable pointers access elements at typed ordinal positions` {
-        @Suite struct `Immutable pointers preserve element access through bare and tagged ordinals` {}
-        @Suite struct `No UnsafePointer ordinal subscript boundary cases are defined` {}
-        @Suite struct `No UnsafePointer ordinal subscript integration cases are defined` {}
-        @Suite(.serialized) struct `No UnsafePointer ordinal subscript performance cases are defined` {}
     }
+}
+
+extension `Ordinal Tests`.`Immutable pointers access elements at typed ordinal positions` {
+    @Suite struct `Immutable pointers preserve element access through bare and tagged ordinals` {}
+
+    @Suite struct `No UnsafePointer ordinal subscript boundary cases are defined` {}
+
+    @Suite struct `No UnsafePointer ordinal subscript integration cases are defined` {}
+
+    @Suite(.serialized) struct `No UnsafePointer ordinal subscript performance cases are defined` {}
 }
 
 extension `Ordinal Tests`.`Immutable pointers access elements at typed ordinal positions`.`Immutable pointers preserve element access through bare and tagged ordinals` {

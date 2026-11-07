@@ -11,11 +11,17 @@ private enum LanePosition {}
 extension `Ordinal Tests` {
     @Suite
     struct `Tagged ordinals retain their position domain through arithmetic and conversion` {
-        @Suite struct `Tagged ordinal operations preserve positions counts and ranges` {}
-        @Suite struct `Tagged ordinal arithmetic reports boundary failures` {}
-        @Suite struct `Tagged ordinal conversions preserve exact values and explicit bit patterns` {}
-        @Suite(.serialized) struct `No tagged ordinal performance cases are defined` {}
     }
+}
+
+extension `Ordinal Tests`.`Tagged ordinals retain their position domain through arithmetic and conversion` {
+    @Suite struct `Tagged ordinal operations preserve positions counts and ranges` {}
+
+    @Suite struct `Tagged ordinal arithmetic reports boundary failures` {}
+
+    @Suite struct `Tagged ordinal conversions preserve exact values and explicit bit patterns` {}
+
+    @Suite(.serialized) struct `No tagged ordinal performance cases are defined` {}
 }
 
 extension `Ordinal Tests`.`Tagged ordinals retain their position domain through arithmetic and conversion`.`Tagged ordinal operations preserve positions counts and ranges` {

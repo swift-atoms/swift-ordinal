@@ -8,11 +8,17 @@ enum `Ordinal Tests` {}
 extension `Ordinal Tests` {
     @Suite
     struct `Ordinals preserve unsigned positions through checked and saturating arithmetic` {
-        @Suite struct `Ordinal construction arithmetic and conversions preserve positions and distances` {}
-        @Suite struct `Ordinal boundaries distinguish saturation from typed arithmetic failures` {}
-        @Suite struct `Ordinal displacement adapters preserve carrier wrappers and tagged domains` {}
-        @Suite(.serialized) struct `No ordinal arithmetic performance cases are defined` {}
     }
+}
+
+extension `Ordinal Tests`.`Ordinals preserve unsigned positions through checked and saturating arithmetic` {
+    @Suite struct `Ordinal construction arithmetic and conversions preserve positions and distances` {}
+
+    @Suite struct `Ordinal boundaries distinguish saturation from typed arithmetic failures` {}
+
+    @Suite struct `Ordinal displacement adapters preserve carrier wrappers and tagged domains` {}
+
+    @Suite(.serialized) struct `No ordinal arithmetic performance cases are defined` {}
 }
 
 extension `Ordinal Tests`.`Ordinals preserve unsigned positions through checked and saturating arithmetic`.`Ordinal construction arithmetic and conversions preserve positions and distances` {

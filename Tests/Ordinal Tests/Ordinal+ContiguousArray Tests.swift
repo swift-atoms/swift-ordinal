@@ -5,11 +5,17 @@ import Testing
 extension `Ordinal Tests` {
     @Suite
     struct `Contiguous arrays access elements at typed ordinal positions` {
-        @Suite struct `Contiguous arrays preserve element access through bare and tagged ordinals` {}
-        @Suite struct `No ContiguousArray ordinal subscript boundary cases are defined` {}
-        @Suite struct `No ContiguousArray ordinal subscript integration cases are defined` {}
-        @Suite(.serialized) struct `No ContiguousArray ordinal subscript performance cases are defined` {}
     }
+}
+
+extension `Ordinal Tests`.`Contiguous arrays access elements at typed ordinal positions` {
+    @Suite struct `Contiguous arrays preserve element access through bare and tagged ordinals` {}
+
+    @Suite struct `No ContiguousArray ordinal subscript boundary cases are defined` {}
+
+    @Suite struct `No ContiguousArray ordinal subscript integration cases are defined` {}
+
+    @Suite(.serialized) struct `No ContiguousArray ordinal subscript performance cases are defined` {}
 }
 
 extension `Ordinal Tests`.`Contiguous arrays access elements at typed ordinal positions`.`Contiguous arrays preserve element access through bare and tagged ordinals` {
