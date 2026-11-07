@@ -132,7 +132,6 @@ extension `Storage direction Tests` {
                 values.insert(99, at: Ordinal(UInt.max))
             }
         }
-
     }
 }
 
@@ -147,7 +146,7 @@ private struct SignedIndices: MutableCollection, RangeReplaceableCollection {
         get { values[i + 1] }
         set { values[i + 1] = newValue }
     }
-    mutating func replaceSubrange<C: Collection>(
+    mutating func replaceSubrange<C: Swift.Collection>(
         _ subrange: Range<Int>,
         with newElements: C
     ) where C.Element == Int {
