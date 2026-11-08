@@ -1,5 +1,5 @@
-public import Cardinal
 public import Advancement
+public import Cardinal
 public import Distance
 public import Predecessor
 public import Retreat
