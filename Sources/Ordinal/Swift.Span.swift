@@ -3,7 +3,8 @@ public import Tagged
 
 extension Swift.Span where Element: ~Copyable {
 
-    @_lifetime(immortal)
+    @unsafe
+    @_lifetime(borrow start)
     @inlinable
     public init(
         _unsafeStart start: UnsafePointer<Element>,
@@ -12,10 +13,9 @@ extension Swift.Span where Element: ~Copyable {
         guard let length = try? Int(count.underlying) else {
             preconditionFailure("Span count is not representable as Int")
         }
-        let span = unsafe Swift.Span(
+        self = unsafe Swift.Span(
             _unsafeStart: start,
             count: length
         )
-        unsafe (self = _overrideLifetime(span, borrowing: ()))
     }
 }
