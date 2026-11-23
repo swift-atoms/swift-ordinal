@@ -1,7 +1,7 @@
 public import Cardinal
 public import Carrier
-public import Subtraction
 public import Property
+public import Subtraction
 
 extension Ordinal.`Protocol` {
 

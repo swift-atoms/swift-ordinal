@@ -2,9 +2,9 @@ public import Advancement
 public import Cardinal
 public import Carrier
 public import Difference
-public import Subtraction
 public import Magnitude
 public import Retreat
+public import Subtraction
 public import Tagged
 
 extension Ordinal {
