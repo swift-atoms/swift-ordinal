@@ -2,7 +2,7 @@ public import Advancement
 public import Cardinal
 public import Carrier
 public import Difference
-public import Distance
+public import Subtraction
 public import Magnitude
 public import Retreat
 public import Tagged
@@ -98,18 +98,12 @@ where
     L.Domain == R.Domain
 {
     if lhs.ordinal.rawValue >= rhs.ordinal.rawValue {
-        let magnitude = Distance.reporting(
-            from: rhs.ordinal.rawValue,
-            to: lhs.ordinal.rawValue
-        ).value
+        let magnitude = Subtraction.reporting(lhs.ordinal.rawValue, rhs.ordinal.rawValue).value
         return L.Offset(
             .positive(Difference.Magnitude(Cardinal(magnitude)))
         )
     }
-    let magnitude = Distance.reporting(
-        from: lhs.ordinal.rawValue,
-        to: rhs.ordinal.rawValue
-    ).value
+    let magnitude = Subtraction.reporting(rhs.ordinal.rawValue, lhs.ordinal.rawValue).value
     return L.Offset(
         .negative(Difference.Magnitude(Cardinal(magnitude)))
     )

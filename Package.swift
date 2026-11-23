@@ -59,7 +59,7 @@ let package = Package(
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-atoms/swift-distance.git",
+            url: "https://github.com/swift-atoms/swift-subtraction.git",
             branch: "main"
         ),
     ],
@@ -72,7 +72,7 @@ let package = Package(
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Carrier", package: "swift-carrier"),
                 .product(name: "Difference", package: "swift-difference"),
-                .product(name: "Distance", package: "swift-distance"),
+                .product(name: "Subtraction", package: "swift-subtraction"),
                 .product(name: "Predecessor", package: "swift-predecessor"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Retreat", package: "swift-retreat"),
